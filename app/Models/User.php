@@ -41,4 +41,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function create(array $array)
+    {
+        $user = new User();
+        $user->name = $array['name'];
+        $user->email = $array['email'];
+        $user->password = Hash::make($array['password']);
+        $user->save();
+        return $user;
+    }
 }

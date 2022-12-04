@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('password_resets', function (Blueprint $table) {
-            $table->string('email')->index();
-            $table->string('token');
+        Schema::create('activity_registrations', function (Blueprint $table) {
+            $table->id();
+            $table->bigInteger('user_id')->index();
+            $table->bigInteger('activity_id')->index();
             $table->timestamp('created_at')->nullable();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('password_resets');
+        Schema::dropIfExists('activity_registrations');
     }
 };
