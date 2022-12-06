@@ -31,7 +31,7 @@ return [
     |
     */
 
-    'lifetime' => env('SESSION_LIFETIME', 120),
+    'lifetime' => env('SESSION_LIFETIME', 120000),
 
     'expire_on_close' => false,
 
@@ -153,9 +153,10 @@ return [
     | in your application. This will determine which domains the cookie is
     | available to in your application. A sensible default has been set.
     |
+    |
     */
 
-    'domain' => env('SESSION_DOMAIN'),
+    'domain' => env('SESSION_DOMAIN', null),
 
     /*
     |--------------------------------------------------------------------------
@@ -168,7 +169,7 @@ return [
     |
     */
 
-    'secure' => env('SESSION_SECURE_COOKIE'),
+    'secure' => env('SESSION_SECURE_COOKIE', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -181,12 +182,13 @@ return [
     |
     */
 
-    'http_only' => true,
+    'http_only' => false,
 
     /*
     |--------------------------------------------------------------------------
     | Same-Site Cookies
     |--------------------------------------------------------------------------
+    |
     |
     | This option determines how your cookies behave when cross-site requests
     | take place, and can be used to mitigate CSRF attacks. By default, we
@@ -196,6 +198,6 @@ return [
     |
     */
 
-    'same_site' => 'lax',
+    'same_site' => 'none',
 
 ];

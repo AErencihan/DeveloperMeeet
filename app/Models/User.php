@@ -45,9 +45,12 @@ class User extends Authenticatable
     public static function create(array $array)
     {
         $user = new User();
-        $user->name = $array['name'];
+        $user->first_name = $array['first_name'];
+        $user->last_name = $array['last_name'];
+        $user->phone = $array['phone'];
+        $user->status = $array['status'];
         $user->email = $array['email'];
-        $user->password = Hash::make($array['password']);
+        $user->password = $array['password'];
         $user->save();
         return $user;
     }

@@ -13,13 +13,13 @@ class CustomAuthController extends Controller
 
     public function index()
     {
-        return view('auth.login');
+        return view('auth.signup');
     }
 
 
     public function customLogin(Request $request)
     {
-        $validator =  $request->validate([
+        $validator = $request->validate([
             'email' => 'required',
             'password' => 'required',
         ]);
@@ -35,7 +35,6 @@ class CustomAuthController extends Controller
     }
 
 
-
     public function registration()
     {
         return view('auth.registration');
@@ -44,43 +43,46 @@ class CustomAuthController extends Controller
 
     public function customRegistration(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
+        $validate = $request->validate([
+            'name' => 'nullable',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
         ]);
 
+        if (!$validate) {
+            redirect()->back()->withErrors($validate);
+        }
+
         $data = $request->all();
-       // $check = $this->create($data);
-
-
+        $this->create($data);
         return redirect("dashboard")->withSuccess('You have signed-in');
     }
-
 
 
     // TODO - create user first model
     public function create(array $data)
     {
+        // Undefined array key "first-name"
+
         return User::create([
-            'name' => $data['name'],
+            'first_name' => $data['first-name'],
+            'last_name' => $data['last-name'],
+            'phone' => $data['phone'],
+            'status' => 'active',
             'email' => $data['email'],
-            'password' => Hash::make($data['password'])
+            'password' => $data['password']
         ]);
     }
 
 
     public function dashboard()
     {
-        if(Auth::check()){
-            return view('dashboard');
-        }
-
-        return redirect("login")->withSuccess('You are not allowed to access');
+        return view('dashboard');
     }
 
 
-    public function signOut() {
+    public function signOut()
+    {
         Session::flush();
         Auth::logout();
 
