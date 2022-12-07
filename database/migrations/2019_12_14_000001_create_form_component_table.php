@@ -13,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('form_component', function (Blueprint $table) {
+        Schema::create('', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('description');
             $table->bigInteger('user_id');
             $table->string('status');
             $table->timestamp('created_at')->nullable();
-            $table->timestamps();
         });
     }
 
