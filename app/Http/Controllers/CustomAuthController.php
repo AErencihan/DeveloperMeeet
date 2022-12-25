@@ -56,6 +56,7 @@ class CustomAuthController extends Controller
 
         $this->create($data);
 
+
         return redirect("/dashboard")->withSuccess('You have signed-in');
     }
 
@@ -63,7 +64,7 @@ class CustomAuthController extends Controller
     // TODO - create user first model
     public function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'phone' => $data['phone'],
@@ -74,7 +75,8 @@ class CustomAuthController extends Controller
             'updated_at' => Date('Y-m-d')
         ]);
 
-
+        auth()->login($user);
+        return $user;
 
     }
 
