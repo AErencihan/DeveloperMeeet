@@ -56,7 +56,7 @@ class CustomAuthController extends Controller
 
         $this->create($data);
 
-        return redirect("view")->withSuccess('You have signed-in');
+        return redirect("/dashboard")->withSuccess('You have signed-in');
     }
 
 
@@ -82,7 +82,7 @@ class CustomAuthController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard');
+        return "SEN Mİ PULLUCAN ABİ";
     }
 
 
