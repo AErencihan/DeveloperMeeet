@@ -11,9 +11,14 @@ use Illuminate\Support\Facades\Auth;
 class CustomAuthController extends Controller
 {
 
-    public function index()
+    public function signUp()
     {
         return view('auth.signup');
+    }
+
+    public function giris()
+    {
+        return view('auth.signIn');
     }
 
 
@@ -78,6 +83,21 @@ class CustomAuthController extends Controller
         auth()->login($user);
         return $user;
 
+    }
+
+    public function signIn(Request $request)
+    {
+        $validator = $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('dashboard')
+                ->withSuccess('Signed in');
+        }
+        $validator['emailPassword'] = 'Email address or password is incorrect.';
+        return redirect("/")->withErrors($validator);
     }
 
 
