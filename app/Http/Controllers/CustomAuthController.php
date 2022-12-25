@@ -43,7 +43,7 @@ class CustomAuthController extends Controller
 
     public function customRegistration(Request $request)
     {
-        /*
+
         $validate = $request->validate([
             'password' => 'required|min:6',
         ]);
@@ -51,7 +51,7 @@ class CustomAuthController extends Controller
         if (!$validate) {
             redirect()->back()->withErrors($validate);
         }
-        */
+
 
         $data = [
             'first_name' => $request->first_name,
@@ -75,11 +75,15 @@ class CustomAuthController extends Controller
     {
         // Undefined array key "first-name"
 
-        return activity::create([
-            'name' => $data['first_name'],
-            'firstname' => $data['last_name'],
-            'created_at' => $data['created_at'],
-            'updated_at' => $data['updated_at']
+        return User::create([
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
+            'phone' => $data['phone'],
+            'status' => "active",
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'created_at' => Date('Y-m-d'),
+            'updated_at' => Date('Y-m-d')
         ]);
 
     }
