@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\activity;
 use Illuminate\Http\Request;
 use Hash;
 use Session;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class CustomAuthController extends Controller
@@ -75,16 +75,13 @@ class CustomAuthController extends Controller
     {
         // Undefined array key "first-name"
 
-        return User::create([
-            'first_name' => $data['first_name'],
-            'last_name' => $data['last_name'],
-            'phone' => $data['phone'],
-            'status' => 'active',
-            'email' => $data['email'],
-            'password' => $data['password'],
+        return activity::create([
+            'name' => $data['first_name'],
+            'firstname' => $data['last_name'],
             'created_at' => $data['created_at'],
             'updated_at' => $data['updated_at']
         ]);
+
     }
 
 

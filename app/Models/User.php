@@ -2,14 +2,27 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+use Illuminate\Database\Eloquent\Model;
+
+class User extends Model
 {
+    protected $table = 'users';
+    // define connection name
+    protected $connection = 'mysql';
+    // define primary key
+    protected $primaryKey = 'id';
+    // define fillable columns
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'email',
+        'password',
+        'phone',
+        'status',
+        'created_at',
+        'updated_at',
+    ];
 
     public static function create(array $array)
     {
@@ -22,6 +35,7 @@ class User extends Authenticatable
         $user->password = $array['password'];
         $user->created_at = $array['created_at'];
         $user->updated_at = $array['updated_at'];
+      //  dd($user);
         $user->save();
         return $user;
     }
