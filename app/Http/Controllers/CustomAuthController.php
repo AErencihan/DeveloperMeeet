@@ -43,16 +43,6 @@ class CustomAuthController extends Controller
 
     public function customRegistration(Request $request)
     {
-
-        $validate = $request->validate([
-            'password' => 'required|min:6',
-        ]);
-
-        if (!$validate) {
-            redirect()->back()->withErrors($validate);
-        }
-
-
         $data = [
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
@@ -66,15 +56,14 @@ class CustomAuthController extends Controller
 
         $this->create($data);
 
-        return redirect("dashboard")->withSuccess('You have signed-in');
+        return redirect("view")->withSuccess('You have signed-in');
     }
 
 
     // TODO - create user first model
     public function create(array $data)
     {
-        // Undefined array key "first-name"
-
+        dd($data);
         return User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
@@ -85,6 +74,8 @@ class CustomAuthController extends Controller
             'created_at' => Date('Y-m-d'),
             'updated_at' => Date('Y-m-d')
         ]);
+
+
 
     }
 
