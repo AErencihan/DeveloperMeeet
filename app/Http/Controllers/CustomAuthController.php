@@ -43,27 +43,21 @@ class CustomAuthController extends Controller
 
     public function customRegistration(Request $request)
     {
-        $data = [
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'phone' => $request->phone,
-            'status' => $request->status,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'created_at' => Date('Y-m-d'),
-            'updated_at' => Date('Y-m-d')
-        ];
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6'
+        ]);
 
+        $data = $request->all();
         $this->create($data);
-
-        return redirect("/dashboard")->withSuccess('You have signed-in');
+        return redirect("dashboard")->withSuccess('You have signed-in');
     }
 
 
     // TODO - create user first model
     public function create(array $data)
     {
-        //dd($data);
         return User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
@@ -82,7 +76,13 @@ class CustomAuthController extends Controller
 
     public function dashboard()
     {
-        return "SEN Mİ PULLUCAN ABİ";
+        if (Auth::check()) {
+            // get user info
+            $user = Auth::user();
+            $user_name = $user->first_name . " " . $user->last_name;
+            return "Welcome " . $user_name;
+        }
+        return redirect("login")->withSuccess('You are not allowed to access');
     }
 
 
