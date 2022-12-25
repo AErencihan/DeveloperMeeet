@@ -63,7 +63,7 @@ class CustomAuthController extends Controller
     // TODO - create user first model
     public function create(array $data)
     {
-        dd($data);
+        //dd($data);
         return User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
