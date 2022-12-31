@@ -23,7 +23,8 @@ return new class extends Migration
             $table->string('image_url');
             $table->string('description');
             $table->string('status');
-
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

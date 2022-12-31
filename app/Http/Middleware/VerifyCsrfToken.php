@@ -14,5 +14,7 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         'custom-registration',
         'dashboard',
+        'sign-in',
+        'activity-create'
     ];
 }
