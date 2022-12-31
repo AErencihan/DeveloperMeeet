@@ -48,21 +48,8 @@ class CustomAuthController extends Controller
 
     public function customRegistration(Request $request)
     {
-        $data = [
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'phone' => $request->phone,
-            'status' => $request->status,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'created_at' => Date('Y-m-d'),
-            'updated_at' => Date('Y-m-d')
-        ];
-
-        $user = $this->create($data);
-        // authenticate user
-        Auth::login($user);
-
+        $all = $request->all();
+        $this->create($all);
         return redirect("/dashboard")->withSuccess('You have signed-in');
     }
 
