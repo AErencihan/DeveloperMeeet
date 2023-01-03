@@ -4,18 +4,129 @@
     <meta charset="UTF-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Title</title>
+    <title>Sign ın</title>
+    <style type="text/css">
+        body{
+            margin:0px;
+            padding:0px;
+            background-color: #dfe4ea;
+        }
+        .section_container{
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+        .section_left, .section_right{
+            height: 100%;
+        }
+        .section_left{
+            width:65%;
+            color:black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction:column;
+            text-align: center; 
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 55px;
+            letter-spacing: 4px;
+
+        }
+        .section_left_items_container{
+            width:450px;
+            height: 200px;
+        }
+        .section_left_items_container > .kayit_button{
+            width:50%;
+            height: 45px;
+            border: none;
+            outline: none;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size:14px;
+            background-color: #4b7bec;
+            color:White;
+            transition:.5s;
+            margin-top:15px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            letter-spacing: 1px;
+        }
+        .section_left_items_container > .kayit_button:hover{
+            cursor: pointer;
+            opacity: .4;
+            transition: .5s;
+        }
+        .section_right{
+            width: 35%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .section_right > .inner_blue_container{
+            width: 350px;
+            height: 450px;
+            background-color:#4b7bec;
+            box-shadow: 5px 5px 8px rgba(0,0,0,.3);
+            border-radius: 5px;
+        }
+        .inner_blue_container > .inner_white_container{
+            position: relative;
+            top:-10%;
+            left: -10%;
+            width: 350px;
+            height: 450px;
+            background-color:white;
+            box-shadow: 5px 5px 18px rgba(0,0,0,.3);
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .5s;
+        }
+        .inner_blue_container > .inner_white_container:hover{
+            transform: scale(1.1);
+            transition: .5s;
+        }
+        .inner_white_container > .form_container{
+            height: 70%;
+            width:70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Montserrat',sans-serif;
+        }
+        
+        
+    </style>
 </head>
 <body>
-    <form action="/sign-in" method="post">
-        @csrf
-        <label>
-            <input type="text" name="email" placeholder="Email">
-        </label>
-        <label>
-            <input type="password" name="password" placeholder="Password">
-        </label>
-        <input type="submit" value="Sign In">
-    </form>
+    <section class="section_container">
+        <div class="section_left">
+            <div class="section_left_items_container">
+                <div>Uygulamayı Kullanabilmek İçin</div>
+                <button class="kayit_button">KAYIT OL</button>
+            </div>
+        </div>
+        <div class="section_right">
+            <div class="inner_blue_container">
+                <div class="inner_white_container">
+                    <div class="form_container">
+                        <H3>Giriş Yap</H3>
+                        <form action="/sign-in" method="post">
+                            @csrf
+                            <label>
+                                <input type="text" name="email" placeholder="Email">
+                            </label>
+                            <label>
+                                <input type="password" name="password" placeholder="Password">
+                            </label>
+                            <input type="submit" value="Sign In">
+                        </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    
 </body>
 </html>

@@ -15,12 +15,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
+//eray ekledi
 
+
+//eray dashboard'ı views içerisindeki dashboard uyguladı.
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
 Route::get('login', [CustomAuthController::class, 'signUp'])->name('login');
+Route::get('login', [CustomAuthController::class, 'signUp'])->name('login');
+
+
 Route::get('giris', [CustomAuthController::class, 'giris'])->name('giris');
+//eray oluşturdu
+Route::get('meets', [CustomAuthController::class, 'meets'])->name('meets');
+
+
 Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
 Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
 Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom');
