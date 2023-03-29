@@ -57,7 +57,7 @@ class CustomAuthController extends Controller
         $this->create($all);
 
         session_start();
-        $_SESSION['user'] = $all['email'];
+        $_SESSION['user.email'] = $all['email'];
 
         // userı kayıt ettikten sonra otomatik giriş yapması için
         $credentials = $request->only('email', 'password');
@@ -69,7 +69,6 @@ class CustomAuthController extends Controller
     }
 
 
-    // TODO - create user first model
     public function create(array $data)
     {
         return User::create([
@@ -93,7 +92,6 @@ class CustomAuthController extends Controller
         ]);
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            dd(Auth::user());
             return redirect()->intended('dashboard')
                 ->withSuccess('Signed in');
         }

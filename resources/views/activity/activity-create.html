@@ -1,19 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Etkinlik Oluşturma Formu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+    </style>
 </head>
 <body>
-    <form action="/activity-create" method="post">
-        <input type="text" name="description" placeholder="description">
-        <input type="text" name="lat" placeholder="lat">
-        <input type="text" name="lot" placeholder="lot">
-        <input type="text" name="date" placeholder="date">
-        <input type="text" name="image_url" placeholder="image_url">
-        <input type="text" name="title" placeholder="title">
-        <input type="text" name="status" placeholder="status">
-        <input type="submit" value="Submit">
-    </form>
+<h1>Etkinlik Oluşturma Formu</h1>
+<form action="/harita" method="post">
+    <label for="etkinlik-ad">Etkinlik Adı:</label>
+    <input type="text" id="etkinlik-ad" name="etkinlik-ad">
+
+    <label for="tarih">Tarih:</label>
+    <input type="date" id="tarih" name="tarih">
+
+    <label for="saat">Saat:</label>
+    <input type="time" id="saat" name="saat">
+
+    <label for="aciklama">Açıklama:</label>
+    <textarea id="aciklama" name="aciklama" rows="4" cols="50"></textarea>
+
+    <input type="submit" value="Etkinlik Oluştur">
+</form>
+
 </body>
 </html>

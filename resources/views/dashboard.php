@@ -250,12 +250,12 @@
 </html>
 
 <?php
-// aktif kullanıcıyı al
 session_start();
-$activeUser = $_SESSION['user'];
-
+try {
+    $activeUser = $_SESSION['user'];
+}catch (Exception $e) {
+    $activeUser = null;
+}
 if ($activeUser == null) {
     header("Location: /login");
 }
-
-
