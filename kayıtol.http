@@ -1,0 +1,9 @@
+## http://localhost:8000/custom-login email ve password ile istek at
+
+POST http://localhost:8000/custom-registration
+Content-Type: application/json
+
+{
+    "email": "ozmen@passowrd.com",
+    "password": "content"
+}

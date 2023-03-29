@@ -41,3 +41,8 @@ Route::post("sign-in", [CustomAuthController::class, "signIn"])->name("signIn");
 // Path: app/Http/Controllers/activity/ActivityCreatorService.php
 Route::post('activity-create', [\App\Http\Controllers\activity\ActivityCreatorService::class, 'activityCreate'])->name('activityCreate');
 Route::get('activity-create-view', [\App\Http\Controllers\activity\ActivityCreatorService::class, 'viewActivity'])->name('activityCreate');
+
+
+Route::get('/signup', function () {
+    return view('auth.signup');
+});

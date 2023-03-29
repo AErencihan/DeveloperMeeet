@@ -22,7 +22,8 @@ class CustomAuthController extends Controller
     }
     public function meets()
     {
-        return view('maps.mapsearch');
+       // return view('maps.mapsearch');
+
     }
 
 
@@ -54,6 +55,9 @@ class CustomAuthController extends Controller
     {
         $all = $request->all();
         $this->create($all);
+
+        session_start();
+        $_SESSION['user'] = $all['email'];
 
         // userı kayıt ettikten sonra otomatik giriş yapması için
         $credentials = $request->only('email', 'password');
