@@ -50,3 +50,8 @@ Route::get('/signup', function () {
 Route::post('/harita', function () {
     return view('harita');
 });
+
+Route::get('etkinlikler', [\App\Http\Controllers\activity\ActivityListService::class, 'viewAllActivities'])->name('activityList');
+
+// /detail/{id}
+Route::get('detail/{id}', [\App\Http\Controllers\activity\ActivityListService::class, 'viewActivityDetail'])->name('activityDetail');
