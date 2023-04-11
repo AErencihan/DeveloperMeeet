@@ -34,9 +34,10 @@ class CustomAuthController extends Controller
             'password' => 'required',
         ]);
 
+        $remember = $request->has('remember');
 
         $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials, $remember)) {
             return redirect()->intended('dashboard')
                 ->withSuccess('Signed in');
         }
@@ -81,7 +82,6 @@ class CustomAuthController extends Controller
             'created_at' => Date('Y-m-d'),
             'updated_at' => Date('Y-m-d')
         ]);
-
     }
 
     public function signIn(Request $request)
