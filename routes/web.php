@@ -55,3 +55,7 @@ Route::get('etkinlikler', [\App\Http\Controllers\activity\ActivityListService::c
 
 // /detail/{id}
 Route::get('detail/{id}', [\App\Http\Controllers\activity\ActivityListService::class, 'viewActivityDetail'])->name('activityDetail');
+
+Route::get('hatalı-giriş', function () {
+    return view('error');
+});

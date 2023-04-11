@@ -16,6 +16,7 @@ class VerifyCsrfToken extends Middleware
         'dashboard',
         'sign-in',
         'activity-create',
-        'harita'
+        'harita',
+        'custom-login'
     ];
 }

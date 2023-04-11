@@ -42,7 +42,7 @@ class CustomAuthController extends Controller
                 ->withSuccess('Signed in');
         }
         $validator['emailPassword'] = 'Email address or password is incorrect.';
-        return redirect("login")->withErrors($validator);
+        return redirect("/hatalı-giriş")->withErrors($validator);
     }
 
 
@@ -92,6 +92,8 @@ class CustomAuthController extends Controller
         ]);
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
+            session_start();
+            $_SESSION['user.email'] = $credentials['email'];
             return redirect()->intended('dashboard')
                 ->withSuccess('Signed in');
         }
