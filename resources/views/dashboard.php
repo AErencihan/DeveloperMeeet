@@ -80,7 +80,6 @@
             width: 100%;
             height: 90vh;
             flex-direction: row;
-
         }
 
         .mainpageBody > .section1 {
@@ -103,6 +102,7 @@
             font-size: 55px;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             color: #4b4b4b;
+            
             /* background-color: white; */
 
         }
@@ -117,7 +117,7 @@
             flex-direction: column;
         }
 
-        .section2 > .section2InnerContainer > .getStarted {
+        .sign-up-button{
             width: 95%;
             height: 45px;
             border: none;
@@ -132,7 +132,7 @@
             letter-spacing: 1px;
         }
 
-        .section2 > .section2InnerContainer > .getStarted:hover {
+        .sign-up-button:hover{
             cursor: pointer;
             opacity: .4;
             transition: .5s;
@@ -142,13 +142,103 @@
             width: 500px;
             height: 250px;
         }
+        /* firmalar */
+        .companies{
+            width:100%;
+            height:30vh;
+            background-color:#dfe4ea;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 19px;
+            color: #4b4b4b;
+            text-transform:uppercase;
+        }
+        .inner-logos{
+            background:red;
+            width:80%;
+            height:100%;
+        }
+        /* yazı içerikleri */
+        .inner-content-explain{
+            width:100%;
+            height:100vh;
+            background-color:#dfe4ea;
+            display:flex;
+            
+        }
+        /*footer*/
+        footer{
+            width:100%;
+            height:50%;
+            background-color:#4b7bec;
+            box-shadow:-2px -2px 7px rgba(0,0,0,.3);
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+        }
+        .inner-footer{
+            width:90%;
+            height:100%;
+            /* background:green; */
+            display:flex;
+        }
+        .inner-left-footer,.inner-right-footer{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        /* left footer */
+        .inner-left-footer{
+            width:40%;
+            height:100%;
+            /* background: red; */
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .inner-left-footer > ul{
+            list-style:none;
+        }
+        .inner-left-footer > ul > li{
+            margin-bottom:15px;
+        }
+        .inner-left-footer > ul > li > a{
+            text-decoration:none;
+            text-transform:uppercase;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 11px;
+            color:white;
+        }
+        /* Right Footer */
+        .inner-right-footer{
+            width:60%;
+            height:100%;
+            /* background:gray; */
+        }
+        .container-news{
+            width:70%;
+            height:30px;
+            background-color:#d1ccc0;
+        }
+        .container-news > span{
+            width:30%;
+            height:100%;
+        }
+        .container-news > input{
+            width:70%;
+            height:100%;
+        }
 
         @media (max-width: 900px) {
             body {
                 height: auto;
             }
 
-            .mainpageBody {
+            .mainpageBody{
                 display: flex;
                 flex-direction: column;
             }
@@ -167,7 +257,7 @@
             }
         }
 
-        @media (max-width: 500px) {
+        @media (max-width: 600px) {
             .section2InnerContainer {
                 font-size: 45px;
                 width: 100%;
@@ -175,52 +265,107 @@
                 text-align: center;
             }
         }
+        ::-webkit-scrollbar{
+            background-color: #F5F5F5;
+            float: left;
+            height: 300px;
+            margin-bottom: 25px;
+            margin-left: 22px;
+            margin-top: 40px;
+            width: 15px;
+            overflow-y: scroll;
+        }
+        ::-webkit-scrollbar-track {
+            box-shadow: 0 0 5px rgba(0,0,0,.2);
+        }
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #4b4b4b;
+            /* border-radius: 10px; */
+        }
     </style>
 </head>
 <body>
-<header>
-    <div class="logo">
-        <span>Developer Meet</span>
-    </div>
-    <nav class="menu">
-        <ul>
-            <li>Hakkımızda</li>
-            <li>Misyonumuz</li>
-            <li>İletişim</li>
-    </nav>
-    <div class="log">
-        <button>Giriş Yap</button>
-    </div>
-</header>
-<section class="mainpageBody">
-    <div class="section1">
-        <!-- Slider main container -->
-        <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide"></div>
-                <div class="swiper-slide"></div>
-                <div class="swiper-slide"></div>
-                ...
+
+    <header>
+        <div class="logo">
+            <span>Developer Meet</span>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li>Hakkımızda</li>
+                <li>Misyonumuz</li>
+                <li>İletişim</li>
+        </nav>
+        <div class="log">
+            <button>Giriş Yap</button>
+        </div>
+    </header>
+    <section class="mainpageBody">
+        <div class="section1">
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide"></div>
+                    <div class="swiper-slide"></div>
+                    <div class="swiper-slide"></div>
+                    ...
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                If we need scrollbar
             </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-            If we need scrollbar
         </div>
-    </div>
-    <div class="section2">
-        <div class="section2InnerContainer">
-            <div>DEVELOPER MEET</div>
-            <div>YAZILIMCI TOPLULUĞU</div>
-            <form action="/signup" method="GET">
-                <button type="submit">Kayıt Ol</button>
-            </form>
+        <div class="section2">
+            <div class="section2InnerContainer">
+                <div>DEVELOPER MEET</div>
+                <div>YAZILIMCI TOPLULUĞU</div>
+                <form action="/signup" method="GET">
+                    <button type="submit" class="sign-up-button">Kayıt Ol</button>
+                </form>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section class="companies">
+        <h3>Sponsorlu Topluluklarımız</h3>
+        <div class="inner-logos">
+
+        </div>
+    </section>
+    <section class="inner-content-explain">
+        <!--Fotograf ve içerik kısmı buraya eklenecek -->
+    </section>
+    <section class="inner-content-explain">
+        <!--Fotograf ve içerik kısmı buraya eklenecek -->
+    </section>
+    <footer>
+        <div class="inner-footer">
+            <div class="inner-left-footer">
+                <ul>
+                    <li><a href="#">Anasayfa</a></li>
+                    <li><a href="#">Hakkımızda</a></li>
+                    <li><a href="#">Misyonumuz</a></li>
+                    <li><a href="#">İletişim</a></li>
+                    <li><a href="#">Giriş Yap</a></li>
+                    <li><a href="#">Kayıt Ol</a></li>
+                </ul>
+            </div>
+            <div class="inner-right-footer">
+                <div class="container-news">
+                    <span>icon</span>
+                    <input type="text" placeholder="Bültenimize Abone Olun"/>
+                </div>
+            </div>
+        </div>
+        <div>© Developer Meet Tüm Hakları Saklıdır</div>
+    </footer>
+
+<!--script files-->
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script>
     const swiper = new Swiper('.swiper', {
@@ -259,3 +404,4 @@ try {
 if ($activeUser == null) {
     header("Location: /login");
 }
+?>
