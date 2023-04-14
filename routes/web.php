@@ -22,11 +22,8 @@ Route::get('/', function () {
 
 //eray dashboard'ı views içerisindeki dashboard uyguladı.
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
-Route::get('login', [CustomAuthController::class, 'signUp'])->name('login');
-Route::get('login', [CustomAuthController::class, 'signUp'])->name('login');
-
-
-Route::get('giris', [CustomAuthController::class, 'giris'])->name('giris');
+Route::get('signup', [CustomAuthController::class, 'signUp'])->name('login');
+Route::get('signin', [CustomAuthController::class, 'giris'])->name('giris');
 //eray oluşturdu
 Route::get('meets', [CustomAuthController::class, 'meets'])->name('meets');
 
@@ -46,6 +43,8 @@ Route::get('etkinlik-olustur', [\App\Http\Controllers\activity\ActivityCreatorSe
 Route::get('/signup', function () {
     return view('auth.signup');
 });
+
+
 
 Route::post('/harita', function () {
     return view('harita');
