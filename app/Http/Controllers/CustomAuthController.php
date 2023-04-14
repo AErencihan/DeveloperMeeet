@@ -109,7 +109,6 @@ class CustomAuthController extends Controller
 
     public function dashboard()
     {
-        dd(Auth::user());
         if (Auth::check()) {
             // get user info
             $user = Auth::user();

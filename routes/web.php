@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\activity\ActivityJoinService;
+use App\Http\Controllers\activity\ProfileService;
 use App\Http\Controllers\CustomAuthController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -27,7 +29,6 @@ Route::get('/', function () {
 //eray dashboard'ı views içerisindeki dashboard uyguladı.
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
 Route::get('tercihler', [CustomAuthController::class, 'tercihler']);
-Route::get('signup', [CustomAuthController::class, 'signUp'])->name('login');
 
 
 Route::get('signin', [CustomAuthController::class, 'giris'])->name('giris');
@@ -65,3 +66,7 @@ Route::get('detail/{id}', [\App\Http\Controllers\activity\ActivityListService::c
 Route::get('hatalı-giriş', function () {
     return view('error');
 });
+
+
+Route::get('etkinlige-katıl/{id}', [ActivityJoinService::class, 'joinActivity'])->name('joinActivity');
+Route::get('profile', [ProfileService::class, 'viewProfile'])->name('profil');

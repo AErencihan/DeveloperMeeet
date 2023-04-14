@@ -77,6 +77,7 @@
 <div class="container">
     <div class="card">
         <?php $id = $activity->title; ?>
+        <?php $primaryKey = $activity->id; ?>
         <?php $imgae_url = $activity->image_url; ?>
         <?php $description = $activity->description; ?>
         <?php $date = $activity->date; ?>
@@ -100,8 +101,7 @@
                 </li>
             </ul>
 
-
-            <a href="#" class="button">Etkinliğe Katıl</a>
+            <a href="/etkinlige-katıl/<?php echo $primaryKey ?>" class="button">Etkinliğe Katıl</a>
         </div>
     </div>
 

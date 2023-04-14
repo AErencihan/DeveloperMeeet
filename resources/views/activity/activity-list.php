@@ -79,7 +79,7 @@
                 <h6 class="card-subtitle mb-2 text-muted"><?php echo $activity->date; ?></h6>
                 <p class="card-text"><?php echo $activity->description; ?></p>
                 <a href="/detail/<?php echo $id ?>" class="card-link">Daha Fazla Bilgi</a>
-                <a href="#" class="card-link">Katıl</a>
+                <a href="/etkinlige-katıl" class="card-link">Katıl</a>
             </div>
         </div>
     <?php endforeach; ?>

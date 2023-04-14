@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katılım Onayı</title>
+    <style>
+        body {
+            background-color: #f8f8f8;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 20px 0 0 0;
+            padding: 0;
+            color: #666;
+        }
+
+        button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #0077FF;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0066CC;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Katılım Onayı</h1>
+    <p>Zaten bu etkinliğe katıldınız. Diğer etkinlikleri görmek için aşağıdaki butona tıklayabilirsiniz.</p>
+    <button onclick="window.location.href='/etkinlikler'">Diğer Etkinlikler</button>
+</div>
+</body>
+</html>
