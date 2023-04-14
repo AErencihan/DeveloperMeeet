@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     if (Auth::check()) {
-        return view('tercihler');
+        return view('dashboard2');
     }
     return view('dashboard');
 });
@@ -27,11 +27,10 @@ Route::get('/', function () {
 //eray dashboard'ı views içerisindeki dashboard uyguladı.
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
 Route::get('tercihler', [CustomAuthController::class, 'tercihler']);
-Route::get('login', [CustomAuthController::class, 'signUp'])->name('login');
-Route::get('login', [CustomAuthController::class, 'signUp'])->name('login');
+Route::get('signup', [CustomAuthController::class, 'signUp'])->name('login');
 
 
-Route::get('giris', [CustomAuthController::class, 'giris'])->name('giris');
+Route::get('signin', [CustomAuthController::class, 'giris'])->name('giris');
 //eray oluşturdu
 Route::get('meets', [CustomAuthController::class, 'meets'])->name('meets');
 

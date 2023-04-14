@@ -452,15 +452,3 @@
 
 </body>
 </html>
-
-<?php
-session_start();
-try {
-    $activeUser = $_SESSION['user'];
-}catch (Exception $e) {
-    $activeUser = null;
-}
-if ($activeUser == null) {
-    header("Location: /login");
-}
-?>
