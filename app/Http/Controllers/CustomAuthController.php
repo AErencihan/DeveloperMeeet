@@ -16,6 +16,11 @@ class CustomAuthController extends Controller
         return view('auth.signup');
     }
 
+    public function tercihler()
+    {
+        return view('tercihler');
+    }
+
     public function giris()
     {
         return view('auth.signIn');
@@ -104,6 +109,7 @@ class CustomAuthController extends Controller
 
     public function dashboard()
     {
+        dd(Auth::user());
         if (Auth::check()) {
             // get user info
             $user = Auth::user();

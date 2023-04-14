@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomAuthController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,13 +16,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    if (Auth::check()) {
+        return view('tercihler');
+    }
     return view('dashboard');
 });
-//eray ekledi
 
 
 //eray dashboard'ı views içerisindeki dashboard uyguladı.
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
+Route::get('tercihler', [CustomAuthController::class, 'tercihler']);
 Route::get('login', [CustomAuthController::class, 'signUp'])->name('login');
 Route::get('login', [CustomAuthController::class, 'signUp'])->name('login');
 

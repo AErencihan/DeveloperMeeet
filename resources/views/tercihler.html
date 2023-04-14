@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-left, .btn-right {
+            font-size: 24px;
+            padding: 10px 20px;
+            margin: 20px;
+            border-radius: 50px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-left:hover, .btn-right:hover {
+            transform: scale(1.1);
+        }
+
+        .btn-left:focus, .btn-right:focus {
+            outline: none;
+        }
+
+        .btn-left.active, .btn-right.active {
+            background-color: #007bff;
+            box-shadow: 0px 0px 10px #007bff;
+        }
+
+        .btn-left.inactive, .btn-right.inactive {
+            background-color: #6c757d;
+        }
+
+        .btn-left:disabled, .btn-right:disabled {
+            background-color: #e9ecef;
+            color: #6c757d;
+            cursor: not-allowed;
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<!-- Header Image -->
+<img src="header-image.jpg" class="img-fluid" alt="Header Image">
+
+<!-- Buttons -->
+<div class="container">
+    <button class="btn btn-left active" onclick="selectLeft()">Etkinlikler</button>
+    <button class="btn btn-right inactive" onclick="selectRight()">Forum</button>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Custom JS -->
+<script>
+    function selectLeft() {
+        document.querySelector('.btn-left').classList.add('active');
+        document.querySelector('.btn-right').classList.remove('active');
+        document.querySelector('.btn-left').classList.remove('inactive');
+        document.querySelector('.btn-right').classList.add('inactive');
+    }
+</script>
+<script>
+    function selectRight() {
+        document.querySelector('.btn-right').classList.add('active');
+        document.querySelector('.btn-left').classList.remove('active');
+        document.querySelector('.btn-right').classList.remove('inactive');
+        document.querySelector('.btn-left').classList.add('inactive');
+    }
+</script>
+</body>
+</html>
+
+

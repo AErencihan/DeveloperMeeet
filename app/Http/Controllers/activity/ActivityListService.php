@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use JetBrains\PhpStorm\NoReturn;
 
 class ActivityListService extends Controller
 {
@@ -14,7 +13,6 @@ class ActivityListService extends Controller
     {
         $activities = Activity::all();
         $factory = view('activity.activity-list', compact('activities'));
-      //  dd($factory);
         return $factory;
     }
 
