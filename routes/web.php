@@ -21,6 +21,7 @@ Route::get('/', function () {
     }
     return view('dashboard');
 });
+//eray ekledi
 
 
 //eray dashboard'ı views içerisindeki dashboard uyguladı.
@@ -50,6 +51,8 @@ Route::get('etkinlik-olustur', [\App\Http\Controllers\activity\ActivityCreatorSe
 Route::get('/signup', function () {
     return view('auth.signup');
 });
+
+
 
 Route::post('/harita', function () {
     return view('harita');

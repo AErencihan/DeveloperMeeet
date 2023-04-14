@@ -12,14 +12,14 @@
     -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
         body {
             margin: 0px;
             padding: 0px;
             /*background: #dfe4ea;*/
-            background: rgb(0, 90, 222);
-            background: linear-gradient(90deg, rgba(0, 90, 222, 0.5746673669467788) 6%, rgba(128, 142, 155, 1) 19%, rgba(158, 158, 207, 1) 66%, rgba(147, 173, 193, 1) 88%);
             width: 100%;
             height: 100vh;
+            box-sizing:border-box !important;
         }
 
         header {
@@ -28,14 +28,16 @@
             display: flex;
             justify-content: space-evenly;
             align-items: center;
-
+            background: rgb(0, 90, 222);
+            background: linear-gradient(90deg, rgba(0, 90, 222, 0.5746673669467788) 6%, rgba(128, 142, 155, 1) 19%, rgba(158, 158, 207, 1) 66%, rgba(147, 173, 193, 1) 88%);
         }
 
         header > .logo {
             color: #4b4b4b;
             font-size: 15px;
-            font-family: 'Montserrat', sans-serif;
+            font-family: "ASAP";
             font-weight: bold;
+
         }
 
         header > nav.menu > ul {
@@ -46,7 +48,7 @@
         }
 
         header > nav.menu > ul > li {
-            font-family: 'Montserrat', sans-serif;
+            font-family: "ASAP";
             font-size: 12px;
             color: #4b4b4b;
             margin-right: 10px;
@@ -63,7 +65,7 @@
             outline: none;
             background-color: #4b7bec;
             color: White;
-            font-family: 'Montserrat', sans-serif;
+            font-family: "ASAP";
             padding: 5px 15px;
             border-radius: 35px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
@@ -80,6 +82,8 @@
             width: 100%;
             height: 90vh;
             flex-direction: row;
+            background: rgb(0, 90, 222);
+            background: linear-gradient(90deg, rgba(0, 90, 222, 0.5746673669467788) 6%, rgba(128, 142, 155, 1) 19%, rgba(158, 158, 207, 1) 66%, rgba(147, 173, 193, 1) 88%);
         }
 
         .mainpageBody > .section1 {
@@ -146,6 +150,8 @@
         .companies{
             width:100%;
             height:30vh;
+            padding:10px;
+            box-sizing:border-box;
             background-color:#dfe4ea;
             display:flex;
             justify-content:center;
@@ -165,14 +171,42 @@
         .inner-content-explain{
             width:100%;
             height:100vh;
-            background-color:#dfe4ea;
+            /* background-color:yellow; */
             display:flex;
+            flex-direction:row;
+            padding:10px;
+            box-sizing:border-box;
+            background-color:#dfe4ea;
+        }
+        .inner-content-explain2{
+            flex-direction:row-reverse;
 
         }
+        .photo-area, .text-area{
+            width:50%;
+            height:100%;
+
+        }
+        .photo-area{
+            /* background-color:red; */
+            padding:120px;
+            box-sizing:border-box;
+        }
+        .text-area{
+            background-color:gray;
+            padding:20px 45px;
+            box-sizing:border-box;
+            font-family:"ASAP";
+        }
+        .text-area > h3{
+            width:100%;
+            text-align:center;
+        }
+
         /*footer*/
         footer{
             width:100%;
-            height:50%;
+            height:40%;
             background-color:#4b7bec;
             box-shadow:-2px -2px 7px rgba(0,0,0,.3);
             display:flex;
@@ -201,17 +235,23 @@
             align-items:center;
         }
         .inner-left-footer > ul{
+
             list-style:none;
         }
         .inner-left-footer > ul > li{
             margin-bottom:15px;
         }
         .inner-left-footer > ul > li > a{
+            font-family:"ASAP";
+            font-weight:400;
             text-decoration:none;
             text-transform:uppercase;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-size: 11px;
             color:white;
+        }
+        .inner-left-footer > ul > li > a:hover{
+            color:rgba(255,255,255,.3);
+            transition:.3s;
         }
         /* Right Footer */
         .inner-right-footer{
@@ -231,6 +271,14 @@
         .container-news > input{
             width:70%;
             height:100%;
+        }
+        .required-page-end{
+            color:White;
+            font-size:16px;
+            font-family:"ASAP";
+            font-weight:200;
+            margin-bottom:15px;
+            box-sizing:border-box;
         }
 
         @media (max-width: 900px) {
@@ -265,7 +313,8 @@
                 text-align: center;
             }
         }
-        ::-webkit-scrollbar{
+
+         ::-webkit-scrollbar{
             background-color: #F5F5F5;
             float: left;
             height: 300px;
@@ -278,10 +327,9 @@
         ::-webkit-scrollbar-track {
             box-shadow: 0 0 5px rgba(0,0,0,.2);
         }
-        /* Handle */
+
         ::-webkit-scrollbar-thumb {
             background: #4b4b4b;
-            /* border-radius: 10px; */
         }
     </style>
 </head>
@@ -293,8 +341,8 @@
         </div>
         <nav class="menu">
             <ul>
-                <li>Hakkımızda</li>
-                <li>Misyonumuz</li>
+                <li>Forum</li>
+                <li>Meet</li>
                 <li>İletişim</li>
         </nav>
         <div class="log">
@@ -331,28 +379,39 @@
         </div>
     </section>
 
+
+    <section class="inner-content-explain">
+        <div class="photo-area">
+            <img src="/photos/startup.jpg"/>
+        </div>
+        <div class="text-area">
+            <h1>Başlık</h1>
+            Yaygın inancın tersine, Lorem Ipsum rastgele sözcüklerden oluşmaz. Kökleri M.Ö. 45 tarihinden bu yana klasik Latin edebiyatına kadar uzanan 2000 yıllık bir geçmişi vardır. Virginia'daki Hampden-Sydney College'dan Latince profesörü Richard McClintock, bir Lorem Ipsum pasajında geçen ve anlaşılması en güç sözcüklerden biri olan 'consectetur' sözcüğünün klasik edebiyattaki örneklerini incelediğinde kesin bir kaynağa ulaşmıştır. Lorm Ipsum, Çiçero tarafından M.Ö. 45 tarihinde kaleme alınan "de Finibus Bonorum et Malorum" (İyi ve Kötünün Uç Sınırları) eserinin 1.10.32 ve 1.10.33 sayılı bölümlerinden gelmektedir. Bu kitap, ahlak kuramı üzerine bir tezdir ve Rönesans döneminde çok popüler olmuştur. Lorem Ipsum pasajının ilk satırı olan "Lorem ipsum dolor sit amet" 1.10.32 sayılı bölümdeki bir satırdan gelmektedir.
+        </div>
+    </section>
+    <section class="inner-content-explain inner-content-explain2">
+        <div class="photo-area">
+
+        </div>
+        <div class="text-area">
+            <h1>Başlık</h1>
+            Yaygın inancın tersine, Lorem Ipsum rastgele sözcüklerden oluşmaz. Kökleri M.Ö. 45 tarihinden bu yana klasik Latin edebiyatına kadar uzanan 2000 yıllık bir geçmişi vardır. Virginia'daki Hampden-Sydney College'dan Latince profesörü Richard McClintock, bir Lorem Ipsum pasajında geçen ve anlaşılması en güç sözcüklerden biri olan 'consectetur' sözcüğünün klasik edebiyattaki örneklerini incelediğinde kesin bir kaynağa ulaşmıştır. Lorm Ipsum, Çiçero tarafından M.Ö. 45 tarihinde kaleme alınan "de Finibus Bonorum et Malorum" (İyi ve Kötünün Uç Sınırları) eserinin 1.10.32 ve 1.10.33 sayılı bölümlerinden gelmektedir. Bu kitap, ahlak kuramı üzerine bir tezdir ve Rönesans döneminde çok popüler olmuştur. Lorem Ipsum pasajının ilk satırı olan "Lorem ipsum dolor sit amet" 1.10.32 sayılı bölümdeki bir satırdan gelmektedir.
+        </div>
+    </section>
     <section class="companies">
         <h3>Sponsorlu Topluluklarımız</h3>
         <div class="inner-logos">
 
         </div>
     </section>
-    <section class="inner-content-explain">
-        <!--Fotograf ve içerik kısmı buraya eklenecek -->
-    </section>
-    <section class="inner-content-explain">
-        <!--Fotograf ve içerik kısmı buraya eklenecek -->
-    </section>
     <footer>
         <div class="inner-footer">
             <div class="inner-left-footer">
                 <ul>
                     <li><a href="#">Anasayfa</a></li>
-                    <li><a href="#">Hakkımızda</a></li>
-                    <li><a href="#">Misyonumuz</a></li>
+                    <li><a href="#">Forum</a></li>
+                    <li><a href="#">Meet</a></li>
                     <li><a href="#">İletişim</a></li>
-                    <li><a href="#">Giriş Yap</a></li>
-                    <li><a href="#">Kayıt Ol</a></li>
                 </ul>
             </div>
             <div class="inner-right-footer">
@@ -362,7 +421,7 @@
                 </div>
             </div>
         </div>
-        <div>© Developer Meet Tüm Hakları Saklıdır</div>
+        <div class="required-page-end">© Developer Meet Tüm Hakları Saklıdır</div>
     </footer>
 
 <!--script files-->
@@ -393,3 +452,15 @@
 
 </body>
 </html>
+
+<?php
+session_start();
+try {
+    $activeUser = $_SESSION['user'];
+}catch (Exception $e) {
+    $activeUser = null;
+}
+if ($activeUser == null) {
+    header("Location: /login");
+}
+?>
