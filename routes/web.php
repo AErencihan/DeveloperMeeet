@@ -3,6 +3,7 @@
 use App\Http\Controllers\activity\ActivityJoinService;
 use App\Http\Controllers\activity\ProfileService;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\forum\PostService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -68,3 +69,16 @@ Route::get('hatalı-giriş', function () {
 
 Route::get('etkinlige-katıl/{id}', [ActivityJoinService::class, 'joinActivity'])->name('joinActivity');
 Route::get('profile', [ProfileService::class, 'viewProfile'])->name('profil');
+
+// FORUM
+//---------------------------
+Route::get('forum', function () {
+    return view('forum');
+});
+
+Route::post('konu-olustur', [PostService::class, 'createPost'])->name('createPost');
+Route::get('konular', [PostService::class, 'getPosts'])->name('getPosts');
+Route::get('konu/{id}', [PostService::class, 'getPost'])->name('getPost');
+
+//---------------------------
+
