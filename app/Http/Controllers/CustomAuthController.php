@@ -63,13 +63,13 @@ class CustomAuthController extends Controller
     public function customRegistration(Request $request)
     {
         $all = $request->all();
-        $user = $this->create($all);
+        $this->create($all);
 
+        $mail = $all['email'];
         session_start();
         $_SESSION['user.email'] = $all['email'];
-        (new SendWelcomeEmail)->handle(new Registered($user));
+        (new SendWelcomeEmail)->handle($mail);
 
-        // userı kayıt ettikten sonra otomatik giriş yapması için
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             return redirect()->intended('dashboard')

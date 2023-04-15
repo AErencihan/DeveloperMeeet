@@ -12,12 +12,11 @@ class SendWelcomeEmail
     /**
      * Handle the event.
      *
-     * @param  Registered  $event
+     * @param  string  $event
      * @return void
      */
-    public function handle(Registered $event)
+    public function handle(string $event): void
     {
-        $user = $event->user;
-        Mail::to("ali.cihan@ogr.gelisim.edu.tr")->send(new WelcomeEmail(new User));
+        Mail::to($event)->send(new WelcomeEmail($event));
     }
 }
