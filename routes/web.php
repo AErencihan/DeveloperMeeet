@@ -42,7 +42,6 @@ Route::post('custom-registration', [CustomAuthController::class, 'customRegistra
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 Route::post("sign-in", [CustomAuthController::class, "signIn"])->name("signIn");
 
-
 // Path: app/Http/Controllers/activity/ActivityCreatorService.php
 Route::post('activity-create', [\App\Http\Controllers\activity\ActivityCreatorService::class, 'activityCreate'])->name('activityCreate');
 Route::get('etkinlik-olustur', [\App\Http\Controllers\activity\ActivityCreatorService::class, 'viewActivity'])->name('activityCreate');
@@ -51,8 +50,6 @@ Route::get('etkinlik-olustur', [\App\Http\Controllers\activity\ActivityCreatorSe
 Route::get('/signup', function () {
     return view('auth.signup');
 });
-
-
 
 Route::post('/harita', function () {
     return view('harita');
@@ -66,6 +63,7 @@ Route::get('detail/{id}', [\App\Http\Controllers\activity\ActivityListService::c
 Route::get('hatalı-giriş', function () {
     return view('error');
 });
+
 
 
 Route::get('etkinlige-katıl/{id}', [ActivityJoinService::class, 'joinActivity'])->name('joinActivity');
