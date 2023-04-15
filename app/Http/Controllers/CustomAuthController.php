@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\WelcomeEmail;
+use App\Listeners\SendWelcomeEmail;
 use App\Models\activity;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Hash;
 use Session;
@@ -60,10 +63,11 @@ class CustomAuthController extends Controller
     public function customRegistration(Request $request)
     {
         $all = $request->all();
-        $this->create($all);
+        $user = $this->create($all);
 
         session_start();
         $_SESSION['user.email'] = $all['email'];
+        (new SendWelcomeEmail)->handle(new Registered($user));
 
         // userı kayıt ettikten sonra otomatik giriş yapması için
         $credentials = $request->only('email', 'password');
@@ -71,6 +75,7 @@ class CustomAuthController extends Controller
             return redirect()->intended('dashboard')
                 ->withSuccess('Signed in');
         }
+
         return redirect("/dashboard")->withSuccess('You have signed-in');
     }
 
