@@ -18,7 +18,6 @@ class PostService extends Controller
         Post::create($data);
         return redirect("/forum")->withSuccess('You have signed-in');
     }
-
     public function updatePost($request, $id)
     {
         $post = Post::find($id);
@@ -34,12 +33,12 @@ class PostService extends Controller
         $post->delete();
     }
 
-    public function getPost($id): array
+    public function getPost($id): \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
     {
         $post = Post::find($id);
         $post_id = $id;
         $comments = Comment::where('post_id', $post_id)->get();
-        return compact('comments', 'post');
+        return view('forum-detay', compact('post', 'comments'));
     }
 
     public function getPosts(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
@@ -53,6 +52,14 @@ class PostService extends Controller
         $email = $_SESSION['user.email'];
         $user = User::where('email', $email)->first();
         return $user->id;
+    }
+
+    public function createComment(Request $request, $id)
+    {
+        $data = $request->all();
+        $data['post_id'] = $id;
+        Comment::create($data);
+        return redirect("/konu/" . $data['post_id'])->withSuccess('You have signed-in');
     }
 
 }

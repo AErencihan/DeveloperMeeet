@@ -28,7 +28,7 @@ class CustomAuthController extends Controller
 
     public function meets()
     {
-        // return view('maps.mapsearch');
+         return view('maps.mapsearch');
     }
 
 

@@ -7,16 +7,6 @@ use App\Http\Controllers\forum\PostService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     if (Auth::check()) {
@@ -24,16 +14,13 @@ Route::get('/', function () {
     }
     return view('dashboard');
 });
-//eray ekledi
 
 
-//eray dashboard'ı views içerisindeki dashboard uyguladı.
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
 Route::get('tercihler', [CustomAuthController::class, 'tercihler']);
 
 
 Route::get('signin', [CustomAuthController::class, 'giris'])->name('giris');
-//eray oluşturdu
 Route::get('meets', [CustomAuthController::class, 'meets'])->name('meets');
 
 
@@ -79,6 +66,7 @@ Route::get('forum', function () {
 Route::post('konu-olustur', [PostService::class, 'createPost'])->name('createPost');
 Route::get('konular', [PostService::class, 'getPosts'])->name('getPosts');
 Route::get('konu/{id}', [PostService::class, 'getPost'])->name('getPost');
+Route::post('yorum-olustur/{id}', [PostService::class, 'createComment'])->name('createComment');
 
 //---------------------------
 

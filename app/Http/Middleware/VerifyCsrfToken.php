@@ -18,6 +18,7 @@ class VerifyCsrfToken extends Middleware
         'activity-create',
         'harita',
         'custom-login',
-        'konu-olustur'
+        'konu-olustur',
+        'yorum-olustur/*',
     ];
 }
