@@ -115,7 +115,7 @@ class CustomAuthController extends Controller
                 'password' => Hash::make($request->password),
                 'remember_token' => null
             ]);
-            return redirect()->route('signin')->with('success', 'Şifreniz başarıyla güncellendi.');
+            return redirect("/signin");
         } else {
             return view('auth.error-token');
         }
