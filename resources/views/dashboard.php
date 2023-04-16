@@ -298,7 +298,7 @@
                 <li>İletişim</li>
         </nav>
         <div class="log">
-            <button>Giriş Yap</button>
+            <button><a href="/signin">Giriş Yap</a></button>
         </div>
     </header>
     <section class="mainpageBody">

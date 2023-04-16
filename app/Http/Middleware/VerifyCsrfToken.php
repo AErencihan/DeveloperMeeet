@@ -20,5 +20,7 @@ class VerifyCsrfToken extends Middleware
         'custom-login',
         'konu-olustur',
         'yorum-olustur/*',
+        'resetPassword',
+        'updatePassword'
     ];
 }

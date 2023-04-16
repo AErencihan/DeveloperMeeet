@@ -4,11 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\WelcomeEmail;
 use App\Listeners\SendWelcomeEmail;
-use App\Models\activity;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Hash;
-use Session;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 
 class CustomAuthController extends Controller
@@ -37,20 +35,13 @@ class CustomAuthController extends Controller
 
     public function customLogin(Request $request)
     {
-        $validator = $request->validate([
-            'email' => 'required',
-            'password' => 'required',
-        ]);
-
-        $remember = $request->has('remember');
-
         $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials, $remember)) {
+        if (Auth::attempt($credentials)) {
+            Auth::loginUsingId($credentials['email']);
             return redirect()->intended('dashboard')
                 ->withSuccess('Signed in');
         }
-        $validator['emailPassword'] = 'Email address or password is incorrect.';
-        return redirect("/hatalı-giriş")->withErrors($validator);
+        return redirect("/hatalı-giriş");
     }
 
 
@@ -63,19 +54,13 @@ class CustomAuthController extends Controller
     public function customRegistration(Request $request)
     {
         $all = $request->all();
-        $this->create($all);
+        $user = $this->create($all);
+        Session::put('user', $user);
 
         $mail = $all['email'];
         session_start();
         $_SESSION['user.email'] = $all['email'];
         (new SendWelcomeEmail)->handle($mail);
-
-        $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard')
-                ->withSuccess('Signed in');
-        }
-
         return redirect("/dashboard")->withSuccess('You have signed-in');
     }
 
@@ -96,30 +81,19 @@ class CustomAuthController extends Controller
 
     public function signIn(Request $request)
     {
-        $validator = $request->validate([
-            'email' => 'required',
-            'password' => 'required',
-        ]);
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             session_start();
             $_SESSION['user.email'] = $credentials['email'];
-            return redirect()->intended('dashboard')
+            return redirect()->intended('hatalı-giriş')
                 ->withSuccess('Signed in');
         }
-        $validator['emailPassword'] = 'Email address or password is incorrect.';
-        return redirect("/")->withErrors($validator);
+        return redirect("/");
     }
 
 
     public function dashboard()
     {
-        if (Auth::check()) {
-            // get user info
-            $user = Auth::user();
-            $user_name = $user->first_name . " " . $user->last_name;
-            return "Welcome " . $user_name;
-        }
         return redirect("/")->withSuccess('You are not allowed to access');
 
     }
@@ -131,5 +105,19 @@ class CustomAuthController extends Controller
         Auth::logout();
 
         return Redirect('login');
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $user = User::where('remember_token', $request->token)->first();
+        if ($user) {
+            $user->update([
+                'password' => Hash::make($request->password),
+                'remember_token' => null
+            ]);
+            return redirect()->route('signin')->with('success', 'Şifreniz başarıyla güncellendi.');
+        } else {
+            return view('auth.error-token');
+        }
     }
 }

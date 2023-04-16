@@ -30,6 +30,7 @@ class User extends Authenticatable
         'status',
         'created_at',
         'updated_at',
+        'remember_token'
     ];
 
     public static function create(array $array)
