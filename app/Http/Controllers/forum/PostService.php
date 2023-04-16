@@ -16,7 +16,7 @@ class PostService extends Controller
         $data = $request->all();
         $data['user_id'] = $this->findUserFromSessionEmail();
         Post::create($data);
-        return redirect("/forum")->withSuccess('You have signed-in');
+        return redirect("/konular")->withSuccess('You have signed-in');
     }
     public function updatePost($request, $id)
     {

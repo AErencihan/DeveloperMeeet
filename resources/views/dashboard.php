@@ -438,8 +438,8 @@
         </div>
         <nav class="menu">
             <ul>
-                <li>Forum</li>
-                <li>Meet</li>
+                <li><a href="/konular">Forum</a></li>
+                <li><a href="/etkinlikler">Meet</a></li>
                 <li><a href="/contact">İletişim</a></li>
         </nav>
         <div class="log">

@@ -4,7 +4,6 @@ use App\Http\Controllers\activity\ActivityJoinService;
 use App\Http\Controllers\activity\ProfileService;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\forum\PostService;
-use App\Http\Controllers\PasswordResetService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -69,8 +68,6 @@ Route::get('hatalı-giriş', function () {
     return view('error');
 });
 
-
-
 Route::get('etkinlige-katıl/{id}', [ActivityJoinService::class, 'joinActivity'])->name('joinActivity');
 Route::get('profile', [ProfileService::class, 'viewProfile'])->name('profil');
 
@@ -88,3 +85,6 @@ Route::post('yorum-olustur/{id}', [PostService::class, 'createComment'])->name('
 //---------------------------
 
 
+Route::get('contact', function () {
+    return view('contact-form.contact');
+});

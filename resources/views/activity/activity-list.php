@@ -69,9 +69,17 @@
 <body>
 <h1 style="text-align:center;">ETKİNLİKLER LİSTESİ</h1>
 <div class="container">
+
+    <?php
+    // eğer liste boşssa
+    if (empty($activities)) {
+        // eğer etkinlik yoksa ektinlik oluştur butonu göster
+        echo '<a href="/etkinlik-olustur" class="btn btn-primary">Etkinlik Oluştur</a>';
+    }
+    ?>
+
     <?php foreach ($activities as $activity): ?>
         <?php $id = $activity->id; ?>
-
         <div class="card">
             <img src="<?php echo $activity->image_url; ?>" alt="<?php echo $activity->title; ?>">
             <div class="card-body">
@@ -79,7 +87,7 @@
                 <h6 class="card-subtitle mb-2 text-muted"><?php echo $activity->date; ?></h6>
                 <p class="card-text"><?php echo $activity->description; ?></p>
                 <a href="/detail/<?php echo $id ?>" class="card-link">Daha Fazla Bilgi</a>
-                <a href="/etkinlige-katıl" class="card-link">Katıl</a>
+                <a href="/etkinlige-katıl/<?php echo $id ?>" class="card-link">Katıl</a>
             </div>
         </div>
     <?php endforeach; ?>
