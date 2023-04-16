@@ -67,6 +67,7 @@ class CustomAuthController extends Controller
         $mail = $all['email'];
         session_start();
         $_SESSION['user.email'] = $all['email'];
+        $_SESSION['user'] = $user;
         (new SendWelcomeEmail)->handle($mail);
         return redirect("/dashboard")->withSuccess('You have signed-in');
     }
@@ -102,12 +103,6 @@ class CustomAuthController extends Controller
 
     public function dashboard()
     {
-        if (Auth::check()) {
-            // get user info
-            $user = Auth::user();
-            $user_name = $user->first_name . " " . $user->last_name;
-            return "Welcome " . $user_name;
-        }
         return redirect("/")->withSuccess('You are not allowed to access');
 
     }
