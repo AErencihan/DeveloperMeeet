@@ -17,14 +17,27 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('dashboard');
 });
-//eray ekledi
 
-
-//eray dashboard'ı views içerisindeki dashboard uyguladı.
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+Route::get('contact', [CustomAuthController::class, 'contact']);
+Route::get('/contact', function () {
+    return view('contact-form.contact');
+});
+
 Route::get('signup', [CustomAuthController::class, 'signUp'])->name('login');
+Route::get('/signin', function () {
+    return view('auth.signup');
+});
+
 Route::get('signin', [CustomAuthController::class, 'giris'])->name('giris');
-//eray oluşturdu
+Route::get('/signin', function () {
+    return view('auth.signIn');
+});
+
 Route::get('meets', [CustomAuthController::class, 'meets'])->name('meets');
 
 
@@ -43,6 +56,7 @@ Route::get('etkinlik-olustur', [\App\Http\Controllers\activity\ActivityCreatorSe
 Route::get('/signup', function () {
     return view('auth.signup');
 });
+
 
 
 

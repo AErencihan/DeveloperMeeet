@@ -22,6 +22,29 @@
             box-sizing:border-box !important;
         }
 
+        .menu2{
+            display:none !important;
+            font-family:"ASAP";
+            color: #4b4b4b;
+            font-weight: bold;
+            height: 10vh;
+
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background: rgb(0, 90, 222);
+            background: linear-gradient(90deg, rgba(0, 90, 222, 0.5746673669467788) 6%, rgba(128, 142, 155, 1) 19%, rgba(158, 158, 207, 1) 66%, rgba(147, 173, 193, 1) 88%);
+        }
+        .menu2-inner-content{
+            display:none;
+            width:100%;
+            height:100vh;
+            background:gray;
+            position:sticky;
+            z-index:999;
+            top:0;
+        }
         header {
             height: 10vh;
             width: 100%;
@@ -31,13 +54,14 @@
             background: rgb(0, 90, 222);
             background: linear-gradient(90deg, rgba(0, 90, 222, 0.5746673669467788) 6%, rgba(128, 142, 155, 1) 19%, rgba(158, 158, 207, 1) 66%, rgba(147, 173, 193, 1) 88%);
         }
-
         header > .logo {
-            color: #4b4b4b;
             font-size: 15px;
             font-family: "ASAP";
             font-weight: bold;
-            
+        }
+        header > .logo > a {
+            color: #4b4b4b;
+            text-decoration:none;
         }
 
         header > nav.menu > ul {
@@ -50,8 +74,11 @@
         header > nav.menu > ul > li {
             font-family: "ASAP";
             font-size: 12px;
-            color: #4b4b4b;
             margin-right: 10px;
+        }
+        header > nav.menu > ul > li > a{
+            text-decoration:none;
+            color: #4b4b4b;
         }
 
         header > nav.menu > ul > li:Hover {
@@ -60,18 +87,21 @@
             opacity: .5;
         }
 
-        header > div.log > button {
+        header > div.log > a > button {
             border: none;
             outline: none;
             background-color: #4b7bec;
-            color: White;
             font-family: "ASAP";
+            color:White;
             padding: 5px 15px;
             border-radius: 35px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
         }
+        header > div.log > a {
+            text-decoration:none;
+        }
 
-        header > div.log > button:hover {
+        header > div.log > a > button:hover {
             opacity: .5;
             transition: .5s;
             cursor: pointer;
@@ -82,6 +112,7 @@
             width: 100%;
             height: 90vh;
             flex-direction: row;
+            overflow:hidden;
             background: rgb(0, 90, 222);
             background: linear-gradient(90deg, rgba(0, 90, 222, 0.5746673669467788) 6%, rgba(128, 142, 155, 1) 19%, rgba(158, 158, 207, 1) 66%, rgba(147, 173, 193, 1) 88%);
         }
@@ -92,7 +123,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            /* background-color: white; */
+            /* background:blue; */
         }
 
         .mainpageBody > .section2 {
@@ -106,9 +137,7 @@
             font-size: 55px;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             color: #4b4b4b;
-            
-            /* background-color: white; */
-
+            /* background:black; */
         }
 
         .section2 > .section2InnerContainer {
@@ -124,16 +153,20 @@
         .sign-up-button{
             width: 95%;
             height: 45px;
+            color:white;
             border: none;
             outline: none;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-size: 14px;
             background-color: #4b7bec;
-            color: White;
             transition: .5s;
             margin-top: 15px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
             letter-spacing: 1px;
+        }
+        .section2InnerContainer > a{
+            text-decoration:none;
+            
         }
 
         .sign-up-button:hover{
@@ -171,12 +204,12 @@
         .inner-content-explain{
             width:100%;
             height:100vh;
-            /* background-color:yellow; */
             display:flex;
             flex-direction:row;
             padding:10px;
             box-sizing:border-box;
             background-color:#dfe4ea;
+            /* background:red; */
         }
         .inner-content-explain2{
             flex-direction:row-reverse;
@@ -193,7 +226,7 @@
             box-sizing:border-box;
         }
         .text-area{
-            background-color:gray;
+            /* background-color:gray; */
             padding:20px 45px;
             box-sizing:border-box;
             font-family:"ASAP";
@@ -206,8 +239,9 @@
         /*footer*/
         footer{
             width:100%;
-            height:40%;
-            background-color:#4b7bec;
+            height:250px;
+            background: rgb(0, 90, 222);
+            background: linear-gradient(90deg, rgba(0, 90, 222, 0.5746673669467788) 6%, rgba(128, 142, 155, 1) 19%, rgba(158, 158, 207, 1) 66%, rgba(147, 173, 193, 1) 88%);
             box-shadow:-2px -2px 7px rgba(0,0,0,.3);
             display:flex;
             flex-direction:column;
@@ -219,6 +253,7 @@
             height:100%;
             /* background:green; */
             display:flex;
+            flex-direction:row;
         }
         .inner-left-footer,.inner-right-footer{
             display:flex;
@@ -227,7 +262,7 @@
         }
         /* left footer */
         .inner-left-footer{
-            width:40%;
+            width:30%;
             height:100%;
             /* background: red; */
             display:flex;
@@ -255,22 +290,46 @@
         }
         /* Right Footer */
         .inner-right-footer{
-            width:60%;
+            width:70%;
             height:100%;
-            /* background:gray; */
+            /* background:black; */
+            display:flex;
+            justify-content:center;
+            align-items:center;
         }
         .container-news{
-            width:70%;
-            height:30px;
-            background-color:#d1ccc0;
+            width:80%;
+            height:40px;
+            display:flex;
+            flex-direction:row;
+            background:gray;
+            overflow:hidden;
+            border-radius:2px;
         }
-        .container-news > span{
+        .container-news-left{
             width:30%;
             height:100%;
+            background:#576574;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            cursor:pointer;
         }
-        .container-news > input{
+        .container-news-right{
             width:70%;
             height:100%;
+            background:yellow;
+        }
+        
+        .container-news > .container-news-left > span{
+            font-size:17px;
+        }
+        .container-news > .container-news-right > form > input[type="text"]{
+            width:100%;
+            height:40px;
+            text-indent:20px;
+            outline:none;
+            border:none;
         }
         .required-page-end{
             color:White;
@@ -282,39 +341,74 @@
         }
 
         @media (max-width: 900px) {
+            header{
+                display:flex;
+            }
+            .menu2{
+                display:none;
+            }
             body {
                 height: auto;
             }
-
-            .mainpageBody{
-                display: flex;
-                flex-direction: column;
-            }
-
             .mainpageBody > .section1 {
-                width: 100%;
-                height: 50%;
+                display:none;
             }
-
             .mainpageBody > .section2 {
                 width: 100%;
-                height: 50%;
-                margin: 40px 0px;
-                padding: 40px 0px;
-                /* box-sizing: border-box; */
+                height: 1*0%;
+                padding: 40px 20px;
+                box-sizing: border-box;
+            }
+           
+        }
+        @media (max-width:800px){
+            header{
+                display:flex;
+            }
+            .menu2{
+                display:none;
+            }
+            .mainpageBody > .section1 {
+                display:none;
+            }
+            .inner-content-explain{
+                flex-direction:column;
+                height:auto;
+            }
+            .photo-area, .text-area{
+                width:100%;
+                height:auto; 
+            }
+            .inner-footer{
+                flex-direction:column;
+            }
+            .inner-left-footer{
+                width:100%;
+            }
+            .inner-right-footer{
+                width:100%;
+            }
+            .mainpageBody > .section1{
+                margin-top:-125px !important;
             }
         }
 
         @media (max-width: 600px) {
             .section2InnerContainer {
-                font-size: 45px;
+                font-size: 35px;
                 width: 100%;
                 height: 100%;
                 text-align: center;
             }
+            header{
+                display:none;
+            }
+            .menu2{
+                display:flex !important;
+            }
         }
         
-         ::-webkit-scrollbar{
+         /* ::-webkit-scrollbar{
             background-color: #F5F5F5;
             float: left;
             height: 300px;
@@ -330,25 +424,38 @@
 
         ::-webkit-scrollbar-thumb {
             background: #4b4b4b;
-        }
+        } */
     </style>
 </head>
 <body>
-
+    <div class="menu2-inner-content">
+            
+        <button onclick="closeMenu()">close button</button>
+    </div>
     <header>
         <div class="logo">
-            <span>Developer Meet</span>
+            <a href="/dashboard"><span>Developer Meet</span></a>
         </div>
         <nav class="menu">
             <ul>
                 <li>Forum</li>
                 <li>Meet</li>
-                <li>İletişim</li>
+                <li><a href="/contact">İletişim</a></li>
         </nav>
         <div class="log">
-            <button>Giriş Yap</button>
+            <a href="/signin"><button>Giriş Yap</button></a>
         </div>
     </header>
+    <div class="menu2">
+        <div class="logo">
+            <span>Developer Meet</span>
+        </div>
+        <div class="hamburger menu">
+            <button onclick="openMenu()">Hamburger Menu</button>
+        </div>
+        
+    </div>
+
     <section class="mainpageBody">
         <div class="section1">
             <!-- Slider main container -->
@@ -370,11 +477,8 @@
         </div>
         <div class="section2">
             <div class="section2InnerContainer">
-                <div>DEVELOPER MEET</div>
-                <div>YAZILIMCI TOPLULUĞU</div>
-                <form action="/signup" method="GET">
-                    <button type="submit" class="sign-up-button">Kayıt Ol</button>
-                </form>
+                <div>DEVELOPER MEET <br>YAZILIMCI TOPLULUĞU</div>
+                <a href="/signup"><button type="submit" class="sign-up-button">Kayıt Ol</button></a>
             </div>
         </div>
     </section>
@@ -391,7 +495,7 @@
     </section>
     <section class="inner-content-explain inner-content-explain2">
         <div class="photo-area">
-
+            <img src="/photos/startup.jpg"/>
         </div>
         <div class="text-area">
             <h1>Başlık</h1>
@@ -411,13 +515,19 @@
                     <li><a href="#">Anasayfa</a></li>
                     <li><a href="#">Forum</a></li>
                     <li><a href="#">Meet</a></li>
-                    <li><a href="#">İletişim</a></li>
+                    <li><a href="/contact">İletişim</a></li>
                 </ul>
             </div>
             <div class="inner-right-footer">
                 <div class="container-news">
-                    <span>icon</span>
-                    <input type="text" placeholder="Bültenimize Abone Olun"/>
+                    <div class="container-news-left">
+                        <span>icon</span>
+                    </div>
+                    <div class="container-news-right">
+                        <form>
+                            <input type="text" placeholder="Bültenimize abone olmak için"/>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -425,6 +535,24 @@
     </footer>
 
 <!--script files-->
+<script type="text/javascript">
+    function closeMenu(){
+        try {
+            document.getElementById("menu2-inner-content").style.display = "none";
+        } catch (error) {
+            console.log('Bir hata oluştu: ' + error.message);
+        }
+        
+        
+    }
+    function openMenu(){
+        try {
+            document.getElementById("menu2-inner-content").style.display = "block";
+        } catch (error) {
+            console.log('Bir hata oluştu: ' + error.message);
+        }
+    }
+</script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script>
     const swiper = new Swiper('.swiper', {

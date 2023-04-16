@@ -20,11 +20,11 @@ class CustomAuthController extends Controller
     {
         return view('auth.signIn');
     }
-    public function meets()
+    public function contact()
     {
-       // return view('maps.mapsearch');
-
+        return view('contact-form.contact');
     }
+    
 
 
     public function customLogin(Request $request)
