@@ -26,15 +26,22 @@ class CustomAuthController extends Controller
     {
         return view('auth.signIn');
     }
-
     public function meets()
     {
-         return view('maps.mapsearch');
+       // return view('maps.mapsearch');
+
     }
+
 
 
     public function customLogin(Request $request)
     {
+        $validator = $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             Auth::loginUsingId($credentials['email']);
@@ -77,6 +84,7 @@ class CustomAuthController extends Controller
             'created_at' => Date('Y-m-d'),
             'updated_at' => Date('Y-m-d')
         ]);
+
     }
 
     public function signIn(Request $request)
@@ -94,6 +102,12 @@ class CustomAuthController extends Controller
 
     public function dashboard()
     {
+        if (Auth::check()) {
+            // get user info
+            $user = Auth::user();
+            $user_name = $user->first_name . " " . $user->last_name;
+            return "Welcome " . $user_name;
+        }
         return redirect("/")->withSuccess('You are not allowed to access');
 
     }

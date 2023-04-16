@@ -8,17 +8,28 @@ use App\Http\Controllers\PasswordResetService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
 
 Route::get('/', function () {
     return view('dashboard');
 });
+//eray ekledi
 
 
+//eray dashboard'ı views içerisindeki dashboard uyguladı.
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
-Route::get('tercihler', [CustomAuthController::class, 'tercihler']);
-
-
+Route::get('signup', [CustomAuthController::class, 'signUp'])->name('login');
 Route::get('signin', [CustomAuthController::class, 'giris'])->name('giris');
+//eray oluşturdu
 Route::get('meets', [CustomAuthController::class, 'meets'])->name('meets');
 
 
@@ -43,6 +54,7 @@ Route::get('/signup', function () {
 Route::get('/şifre-unuttum', function () {
     return view('auth.resetPassword');
 });
+
 
 Route::post('/harita', function () {
     return view('harita');
