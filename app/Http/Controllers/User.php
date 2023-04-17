@@ -45,7 +45,7 @@ class User extends Authenticatable
         $user->password = $array['password'];
         $user->created_at = $array['created_at'];
         $user->updated_at = $array['updated_at'];
-        $user->role = $array['user'];
+        $user->role = 'user';
         $user->save();
         return $user;
     }

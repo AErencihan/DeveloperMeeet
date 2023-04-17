@@ -46,6 +46,10 @@ Route::post('activity-create', [\App\Http\Controllers\activity\ActivityCreatorSe
 Route::get('etkinlik-olustur', [\App\Http\Controllers\activity\ActivityCreatorService::class, 'viewActivity'])->name('activityCreate');
 
 
+Route::get('admin-page', [\App\Http\Controllers\admin\AdminDashboardService::class, 'viewAdminPage'])->name('adminPage');
+
+
+
 Route::get('/signup', function () {
     return view('auth.signup');
 });
