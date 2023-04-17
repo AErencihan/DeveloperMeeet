@@ -30,7 +30,8 @@ class User extends Authenticatable
         'status',
         'created_at',
         'updated_at',
-        'remember_token'
+        'remember_token',
+        'role'
     ];
 
     public static function create(array $array)
@@ -44,6 +45,7 @@ class User extends Authenticatable
         $user->password = $array['password'];
         $user->created_at = $array['created_at'];
         $user->updated_at = $array['updated_at'];
+        $user->role = $array['user'];
         $user->save();
         return $user;
     }
