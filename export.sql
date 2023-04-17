@@ -110,7 +110,8 @@ CREATE TABLE `users`
     `password`   varchar(999) COLLATE utf8_turkish_ci           NOT NULL,
     `created_at` date DEFAULT NULL,
     `updated_at` date DEFAULT NULL,
-    `remember_token` varchar(999) COLLATE utf8_turkish_ci default NULL
+    `remember_token` varchar(999) COLLATE utf8_turkish_ci default NULL,
+    `role` varchar(999) COLLATE utf8_turkish_ci default NULL
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8
   COLLATE = utf8_turkish_ci;
