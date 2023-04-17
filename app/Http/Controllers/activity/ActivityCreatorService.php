@@ -4,7 +4,6 @@ namespace App\Http\Controllers\activity;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use JetBrains\PhpStorm\NoReturn;
 
 class ActivityCreatorService extends Controller
 {

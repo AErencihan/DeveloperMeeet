@@ -26,12 +26,12 @@ class CustomAuthController extends Controller
     {
         return view('auth.signIn');
     }
+
     public function meets()
     {
-       // return view('maps.mapsearch');
+        // return view('maps.mapsearch');
 
     }
-
 
 
     public function customLogin(Request $request)
