@@ -6,8 +6,12 @@ class SessionUtil
 {
     public static function getUser(): ?User
     {
-        session_start();
-        return $_SESSION['user'];
+        try {
+            session_start();
+            return $_SESSION['user'];
+        }catch (\Exception $e){
+            return null;
+        }
     }
 
 }

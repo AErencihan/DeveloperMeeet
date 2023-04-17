@@ -1,9 +1,13 @@
 <?php
 
+use App\Http\Controllers\activity\ActivityCreatorService;
 use App\Http\Controllers\activity\ActivityJoinService;
+use App\Http\Controllers\activity\ActivityListService;
 use App\Http\Controllers\activity\ProfileService;
+use App\Http\Controllers\admin\AdminDashboardService;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\forum\PostService;
+use App\Http\Controllers\PasswordReminder;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -37,16 +41,16 @@ Route::get('registration', [CustomAuthController::class, 'registration'])->name(
 Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom');
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 Route::post("sign-in", [CustomAuthController::class, "signIn"])->name("signIn");
-Route::post("resetPassword", [\App\Http\Controllers\PasswordReminder::class, "passwordReminderPost"])->name("passwordReminderPost");
-Route::get("resetPassword/{token}", [\App\Http\Controllers\PasswordReminder::class, "passwordReset"])->name("passwordReset");
+Route::post("resetPassword", [PasswordReminder::class, "passwordReminderPost"])->name("passwordReminderPost");
+Route::get("resetPassword/{token}", [PasswordReminder::class, "passwordReset"])->name("passwordReset");
 Route::post('updatePassword', [CustomAuthController::class, 'updatePassword'])->name('updatePassword');
 
 // Path: app/Http/Controllers/activity/ActivityCreatorService.php
-Route::post('activity-create', [\App\Http\Controllers\activity\ActivityCreatorService::class, 'activityCreate'])->name('activityCreate');
-Route::get('etkinlik-olustur', [\App\Http\Controllers\activity\ActivityCreatorService::class, 'viewActivity'])->name('activityCreate');
+Route::post('activity-create', [ActivityCreatorService::class, 'activityCreate'])->name('activityCreate');
+Route::get('etkinlik-olustur', [ActivityCreatorService::class, 'viewActivity'])->name('activityCreate');
 
 
-Route::get('admin-page', [\App\Http\Controllers\admin\AdminDashboardService::class, 'viewAdminPage'])->name('adminPage');
+Route::get('admin-page', [AdminDashboardService::class, 'viewAdminPage'])->name('adminPage');
 
 
 
@@ -63,10 +67,10 @@ Route::post('/harita', function () {
     return view('harita');
 });
 
-Route::get('etkinlikler', [\App\Http\Controllers\activity\ActivityListService::class, 'viewAllActivities'])->name('activityList');
+Route::get('etkinlikler', [ActivityListService::class, 'viewAllActivities'])->name('activityList');
 
 // /detail/{id}
-Route::get('detail/{id}', [\App\Http\Controllers\activity\ActivityListService::class, 'viewActivityDetail'])->name('activityDetail');
+Route::get('detail/{id}', [ActivityListService::class, 'viewActivityDetail'])->name('activityDetail');
 
 Route::get('hatalı-giriş', function () {
     return view('error');

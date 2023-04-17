@@ -12,14 +12,11 @@ class AdminDashboardService extends Controller
     {
         $admin = SessionUtil::getUser();
         $role = $admin->role;
-        dd($role);
         if ($role == 'admin') {
             return view('admin-page');
         } else {
             return view('dashboard');
         }
-
-
     }
 
 

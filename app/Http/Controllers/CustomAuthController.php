@@ -36,15 +36,11 @@ class CustomAuthController extends Controller
 
     public function customLogin(Request $request)
     {
-        $validator = $request->validate([
-            'email' => 'required',
-            'password' => 'required',
-        ]);
-
-
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             Auth::loginUsingId($credentials['email']);
+            session_start();
+            $_SESSION['user'] = $this->getFirst($credentials['email']);
             return redirect()->intended('dashboard')
                 ->withSuccess('Signed in');
         }
@@ -128,5 +124,15 @@ class CustomAuthController extends Controller
         } else {
             return view('auth.error-token');
         }
+    }
+
+    /**
+     * @param $email
+     * @return mixed
+     */
+    public function getFirst($email)
+    {
+        $first = User::where('email', $email)->first();
+        return $first;
     }
 }
