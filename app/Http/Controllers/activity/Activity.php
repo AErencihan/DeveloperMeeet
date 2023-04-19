@@ -24,7 +24,7 @@ class Activity extends Model
         'description',
         'status',
         'created_at',
-        'updated_at',
+        'updated_at'
     ];
 
     public static function create(array $array)
@@ -37,7 +37,7 @@ class Activity extends Model
         $activity->title = $array['title'];
         $activity->image_url = $array['image_url'];
         $activity->description = $array['description'];
-        $activity->status = $array['status'];
+        $activity->status = 'PENDING';
         $activity->created_at = Date('Y-m-d');
         $activity->updated_at = Date('Y-m-d');
         $activity->save();

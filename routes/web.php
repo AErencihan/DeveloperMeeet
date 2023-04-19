@@ -96,3 +96,8 @@ Route::post('yorum-olustur/{id}', [PostService::class, 'createComment'])->name('
 Route::get('contact', function () {
     return view('contact-form.contact');
 });
+
+
+// ADMIN PANEL
+//---------------------------
+Route::get('admin-page', [AdminDashboardService::class, 'getPendingMeetRequests'])->name('adminPage');

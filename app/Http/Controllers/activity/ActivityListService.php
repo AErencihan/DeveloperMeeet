@@ -11,7 +11,8 @@ class ActivityListService extends Controller
 {
     public function viewAllActivities(): Factory|View|Application
     {
-        $activities = Activity::all();
+        // get status APPROVED
+        $activities = Activity::where('status', 'APPROVED')->get();
         $factory = view('activity.activity-list', compact('activities'));
         return $factory;
     }
