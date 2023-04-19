@@ -408,140 +408,130 @@
             }
         }
 
-         /* ::-webkit-scrollbar{
-            background-color: #F5F5F5;
-            float: left;
-            height: 300px;
-            margin-bottom: 25px;
-            margin-left: 22px;
-            margin-top: 40px;
-            width: 15px;
-            overflow-y: scroll;
-        }
-        ::-webkit-scrollbar-track {
-            box-shadow: 0 0 5px rgba(0,0,0,.2);
-        }
+        /* ::-webkit-scrollbar{
+           background-color: #F5F5F5;
+           float: left;
+           height: 300px;
+           margin-bottom: 25px;
+           margin-left: 22px;
+           margin-top: 40px;
+           width: 15px;
+           overflow-y: scroll;
+       }
+       ::-webkit-scrollbar-track {
+           box-shadow: 0 0 5px rgba(0,0,0,.2);
+       }
 
-        ::-webkit-scrollbar-thumb {
-            background: #4b4b4b;
-        } */
+       ::-webkit-scrollbar-thumb {
+           background: #4b4b4b;
+       } */
     </style>
 </head>
 <body>
-    <div class="menu2-inner-content">
+<div class="menu2-inner-content">
 
-        <button onclick="closeMenu()">close button</button>
+    <button onclick="closeMenu()">close button</button>
+</div>
+<header>
+    <div class="logo">
+        <a href="/dashboard"><span>Developer Meet</span></a>
     </div>
-    <header>
-        <div class="logo">
-            <a href="/dashboard"><span>Developer Meet</span></a>
+    <nav class="menu">
+        <ul>
+            <li><a href="/konular">Forum</a></li>
+            <li><a href="/etkinlikler">Meet</a></li>
+            <li><a href="/contact">İletişim</a></li>
+    </nav>
+    <div class="log">
+        <a href="/signout"><button>Çıkış Yap</button></a>
+    </div>
+</header>
+<div class="menu2">
+    <div class="logo">
+        <span>Developer Meet</span>
+    </div>
+    <div class="hamburger menu">
+        <button onclick="openMenu()">Hamburger Menu</button>
+    </div>
+
+</div>
+
+<section class="mainpageBody">
+    <div class="section1">
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"></div>
+                <div class="swiper-slide"></div>
+                <div class="swiper-slide"></div>
+                ...
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            If we need scrollbar
         </div>
-        <nav class="menu">
+    </div>
+    <div class="section2">
+        <div class="section2InnerContainer">
+            <div>DEVELOPER MEET <br>YAZILIMCI TOPLULUĞU</div>
+        </div>
+    </div>
+</section>
+
+
+<section class="inner-content-explain">
+    <div class="photo-area">
+        <img src="/photos/startup.jpg"/>
+    </div>
+    <div class="text-area">
+        <h1>Başlık</h1>
+        Yaygın inancın tersine, Lorem Ipsum rastgele sözcüklerden oluşmaz. Kökleri M.Ö. 45 tarihinden bu yana klasik Latin edebiyatına kadar uzanan 2000 yıllık bir geçmişi vardır. Virginia'daki Hampden-Sydney College'dan Latince profesörü Richard McClintock, bir Lorem Ipsum pasajında geçen ve anlaşılması en güç sözcüklerden biri olan 'consectetur' sözcüğünün klasik edebiyattaki örneklerini incelediğinde kesin bir kaynağa ulaşmıştır. Lorm Ipsum, Çiçero tarafından M.Ö. 45 tarihinde kaleme alınan "de Finibus Bonorum et Malorum" (İyi ve Kötünün Uç Sınırları) eserinin 1.10.32 ve 1.10.33 sayılı bölümlerinden gelmektedir. Bu kitap, ahlak kuramı üzerine bir tezdir ve Rönesans döneminde çok popüler olmuştur. Lorem Ipsum pasajının ilk satırı olan "Lorem ipsum dolor sit amet" 1.10.32 sayılı bölümdeki bir satırdan gelmektedir.
+    </div>
+</section>
+<section class="inner-content-explain inner-content-explain2">
+    <div class="photo-area">
+        <img src="/photos/startup.jpg"/>
+    </div>
+    <div class="text-area">
+        <h1>Başlık</h1>
+        Yaygın inancın tersine, Lorem Ipsum rastgele sözcüklerden oluşmaz. Kökleri M.Ö. 45 tarihinden bu yana klasik Latin edebiyatına kadar uzanan 2000 yıllık bir geçmişi vardır. Virginia'daki Hampden-Sydney College'dan Latince profesörü Richard McClintock, bir Lorem Ipsum pasajında geçen ve anlaşılması en güç sözcüklerden biri olan 'consectetur' sözcüğünün klasik edebiyattaki örneklerini incelediğinde kesin bir kaynağa ulaşmıştır. Lorm Ipsum, Çiçero tarafından M.Ö. 45 tarihinde kaleme alınan "de Finibus Bonorum et Malorum" (İyi ve Kötünün Uç Sınırları) eserinin 1.10.32 ve 1.10.33 sayılı bölümlerinden gelmektedir. Bu kitap, ahlak kuramı üzerine bir tezdir ve Rönesans döneminde çok popüler olmuştur. Lorem Ipsum pasajının ilk satırı olan "Lorem ipsum dolor sit amet" 1.10.32 sayılı bölümdeki bir satırdan gelmektedir.
+    </div>
+</section>
+<section class="companies">
+    <h3>Sponsorlu Topluluklarımız</h3>
+    <div class="inner-logos">
+
+    </div>
+</section>
+<footer>
+    <div class="inner-footer">
+        <div class="inner-left-footer">
             <ul>
-                <li><a href="/konular">Forum</a></li>
-                <li><a href="/etkinlikler">Meet</a></li>
+                <li><a href="#">Anasayfa</a></li>
+                <li><a href="#">Forum</a></li>
+                <li><a href="#">Meet</a></li>
                 <li><a href="/contact">İletişim</a></li>
-        </nav>
-        <div class="log">
-            <a href="/signin"><button>Giriş Yap</button></a>
+            </ul>
         </div>
-    </header>
-    <div class="menu2">
-        <div class="logo">
-            <span>Developer Meet</span>
+        <div class="inner-right-footer">
+            <div class="container-news">
+                <div class="container-news-left">
+                    <span>icon</span>
+                </div>
+                <div class="container-news-right">
+                    <form>
+                        <input type="text" placeholder="Bültenimize abone olmak için"/>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="hamburger menu">
-            <button onclick="openMenu()">Hamburger Menu</button>
-        </div>
-
     </div>
-
-    <section class="mainpageBody">
-        <div class="section1">
-            <!-- Slider main container -->
-            <div class="swiper">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                        <img src="https://resmim.net/cdn/2023/04/11/SZnyN1.png" alt="Resim açıklaması">
-
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="https://resmim.net/cdn/2023/04/11/SZnyN1.png" alt="Resim açıklaması">
-
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="https://resmim.net/cdn/2023/04/11/SZnyN1.png" alt="Resim açıklaması">
-
-                    </div>
-                    ...
-                </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-                If we need scrollbar
-            </div>
-        </div>
-        <div class="section2">
-            <div class="section2InnerContainer">
-                <div>DEVELOPER MEET <br>YAZILIMCI TOPLULUĞU</div>
-                <a href="/signup"><button type="submit" class="sign-up-button">Kayıt Ol</button></a>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="inner-content-explain">
-        <div class="photo-area">
-            <img src="/photos/startup.jpg"/>
-        </div>
-        <div class="text-area">
-            <h1>Başlık</h1>
-            Yaygın inancın tersine, Lorem Ipsum rastgele sözcüklerden oluşmaz. Kökleri M.Ö. 45 tarihinden bu yana klasik Latin edebiyatına kadar uzanan 2000 yıllık bir geçmişi vardır. Virginia'daki Hampden-Sydney College'dan Latince profesörü Richard McClintock, bir Lorem Ipsum pasajında geçen ve anlaşılması en güç sözcüklerden biri olan 'consectetur' sözcüğünün klasik edebiyattaki örneklerini incelediğinde kesin bir kaynağa ulaşmıştır. Lorm Ipsum, Çiçero tarafından M.Ö. 45 tarihinde kaleme alınan "de Finibus Bonorum et Malorum" (İyi ve Kötünün Uç Sınırları) eserinin 1.10.32 ve 1.10.33 sayılı bölümlerinden gelmektedir. Bu kitap, ahlak kuramı üzerine bir tezdir ve Rönesans döneminde çok popüler olmuştur. Lorem Ipsum pasajının ilk satırı olan "Lorem ipsum dolor sit amet" 1.10.32 sayılı bölümdeki bir satırdan gelmektedir.
-        </div>
-    </section>
-    <section class="inner-content-explain inner-content-explain2">
-        <div class="photo-area">
-            <img src="/photos/startup.jpg"/>
-        </div>
-        <div class="text-area">
-            <h1>Başlık</h1>
-            Yaygın inancın tersine, Lorem Ipsum rastgele sözcüklerden oluşmaz. Kökleri M.Ö. 45 tarihinden bu yana klasik Latin edebiyatına kadar uzanan 2000 yıllık bir geçmişi vardır. Virginia'daki Hampden-Sydney College'dan Latince profesörü Richard McClintock, bir Lorem Ipsum pasajında geçen ve anlaşılması en güç sözcüklerden biri olan 'consectetur' sözcüğünün klasik edebiyattaki örneklerini incelediğinde kesin bir kaynağa ulaşmıştır. Lorm Ipsum, Çiçero tarafından M.Ö. 45 tarihinde kaleme alınan "de Finibus Bonorum et Malorum" (İyi ve Kötünün Uç Sınırları) eserinin 1.10.32 ve 1.10.33 sayılı bölümlerinden gelmektedir. Bu kitap, ahlak kuramı üzerine bir tezdir ve Rönesans döneminde çok popüler olmuştur. Lorem Ipsum pasajının ilk satırı olan "Lorem ipsum dolor sit amet" 1.10.32 sayılı bölümdeki bir satırdan gelmektedir.
-        </div>
-    </section>
-    <section class="companies">
-        <h3>Sponsorlu Topluluklarımız</h3>
-        <div class="inner-logos">
-
-        </div>
-    </section>
-    <footer>
-        <div class="inner-footer">
-            <div class="inner-left-footer">
-                <ul>
-                    <li><a href="#">Anasayfa</a></li>
-                    <li><a href="#">Forum</a></li>
-                    <li><a href="#">Meet</a></li>
-                    <li><a href="/contact">İletişim</a></li>
-                </ul>
-            </div>
-            <div class="inner-right-footer">
-                <div class="container-news">
-                    <div class="container-news-left">
-                        <span>icon</span>
-                    </div>
-                    <div class="container-news-right">
-                        <form>
-                            <input type="text" placeholder="Bültenimize abone olmak için"/>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="required-page-end">© Developer Meet Tüm Hakları Saklıdır</div>
-    </footer>
+    <div class="required-page-end">© Developer Meet Tüm Hakları Saklıdır</div>
+</footer>
 
 <!--script files-->
 <script type="text/javascript">

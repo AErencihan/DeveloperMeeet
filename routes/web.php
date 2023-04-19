@@ -8,6 +8,7 @@ use App\Http\Controllers\admin\AdminDashboardService;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\forum\PostService;
 use App\Http\Controllers\PasswordReminder;
+use App\Http\Controllers\SessionUtil;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +24,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    $user = SessionUtil::getUser();
+    if ($user != null) {
+        return view('registered-dashboard');
+    } else {
+        return view('dashboard');
+    }
 });
 //eray ekledi
 

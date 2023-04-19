@@ -108,8 +108,9 @@ class CustomAuthController extends Controller
     {
         Session::flush();
         Auth::logout();
-
-        return Redirect('login');
+        session_start();
+        $_SESSION['user'] = null;
+        return Redirect('/dashboard');
     }
 
     public function updatePassword(Request $request)
