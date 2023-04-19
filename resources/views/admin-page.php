@@ -209,65 +209,28 @@
                 <thead>
                 <tr>
                     <th>Activity ID</th>
-                    <th>Activity name</th>
+                    <th>Activity title</th>
                     <th>Activity position</th>
                     <th>User Id</th>
+                    <th>İŞLEM</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
+                <?php foreach ($activities as $activity): ?>
+                    <?php $id = $activity->id; ?>
+                    <tr>
+                    <td><?php echo $id ?></td>
+                    <td><?php echo $activity->title ?></td>
+                    <td><?php echo $activity->lat ?></td>
+                    <td><?php echo $activity->user_id ?></td>
                     <td>
-                        <div class="container">
-                            <?php
-                            if (empty($activities)) {
-                                echo '<a href="/etkinlik-olustur" class="btn btn-primary">Etkinlik Oluştur</a>';
-                            }
-                            ?>
-                            <?php foreach ($activities
-
-                            as $activity): ?>
-                            <?php $id = $activity->id; ?>
-                            <div class="card">
-                                <img src="<?php echo $activity->image_url; ?>" alt="<?php echo $activity->title; ?>">
-                                <div class="card-body">
-                                    <h5 class="card-title"><?php echo $activity->title; ?></h5>
-                                    <h6 class="card-subtitle mb-2 text-muted"><?php echo $activity->date; ?></h6>
-                                    <p class="card-text"><?php echo $activity->description; ?></p>
-                                    AdminVerifyActiviy <a href="/admin-verify-activity/<?php echo $id; ?>"
-                                                          class="btn btn-primary">Onayla</a>
-                                    <a href="/admin-delete-activity/<?php echo $id; ?>" class="btn btn-danger">Sil</a>
-                                </div>
-                                <?php endforeach; ?>
-                            </div>
+                        <form action="/onayla/<?php echo $id ?>" method="get">
+                            <input type="hidden" name="id" value="<?php echo $id ?>">
+                            <input type="submit" name="approve" value="onayla">
+                        </form>
                     </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                <?php endforeach; ?>
                 </tbody>
             </table>
         </section>

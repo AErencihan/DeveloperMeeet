@@ -17,17 +17,17 @@ class AdminDashboardService extends Controller
         $admin = SessionUtil::getUser();
         $role = $admin->role;
         if ($role == 'admin') {
-            $request = $this->getPendingMeetRequests();
-            view('admin-page', ['pendingMeetRequests' => $request]);
+            $activities = $this->getPendingMeetRequests();
+            return view('admin-page', compact('activities'));
         } else {
             return view('dashboard');
         }
     }
 
-    public function getPendingMeetRequests(): Factory|View|Application
+    public function getPendingMeetRequests()
     {
         $pendingMeetRequests = Activity::where('status', 'PENDING')->get();
-        return view('admin-page', ['pendingMeetRequests' => $pendingMeetRequests]);
+        return $pendingMeetRequests;
     }
 
     public function approveMeetRequest($id): Factory|View|Application
@@ -35,7 +35,7 @@ class AdminDashboardService extends Controller
         $meetRequest = Activity::find($id);
         $meetRequest->status = 'APPROVED';
         $meetRequest->save();
-        return $this->getPendingMeetRequests();
+        return $this->viewAdminPage();
     }
 
     public function getPendingMeetRequestsCount(): int

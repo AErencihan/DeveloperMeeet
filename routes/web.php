@@ -100,4 +100,4 @@ Route::get('contact', function () {
 
 // ADMIN PANEL
 //---------------------------
-Route::get('admin-page', [AdminDashboardService::class, 'getPendingMeetRequests'])->name('adminPage');
+Route::get('onayla/{id}', [AdminDashboardService::class, 'approveMeetRequest'])->name('approveMeetRequest');
