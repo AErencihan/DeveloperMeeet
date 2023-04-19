@@ -66,7 +66,7 @@
             background-color: #fff;
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,.2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
         }
 
         h2 {
@@ -204,52 +204,69 @@
         </section>
 
         <section class="table">
-            <h3>Recent Orders</h3>
+            <h3>Bekleyen Etkinlik İstekleri</h3>
             <table>
                 <thead>
                 <tr>
-                    <th>Order ID</th>
-                    <th>Customer Name</th>
-                    <th>Date</th>
-                    <th>Total</th>
-                    <th>Status</th>
+                    <th>Activity ID</th>
+                    <th>Activity name</th>
+                    <th>Activity position</th>
+                    <th>User Id</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td>0001</td>
-                    <td>John Doe</td>
-                    <td>2023-04-15</td>
-                    <td>$100</td>
-                    <td><span class="status pending">Pending</span></td>
+                    <td>
+                        <div class="container">
+                            <?php
+                            if (empty($activities)) {
+                                echo '<a href="/etkinlik-olustur" class="btn btn-primary">Etkinlik Oluştur</a>';
+                            }
+                            ?>
+                            <?php foreach ($activities
+
+                            as $activity): ?>
+                            <?php $id = $activity->id; ?>
+                            <div class="card">
+                                <img src="<?php echo $activity->image_url; ?>" alt="<?php echo $activity->title; ?>">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $activity->title; ?></h5>
+                                    <h6 class="card-subtitle mb-2 text-muted"><?php echo $activity->date; ?></h6>
+                                    <p class="card-text"><?php echo $activity->description; ?></p>
+                                    AdminVerifyActiviy <a href="/admin-verify-activity/<?php echo $id; ?>"
+                                                          class="btn btn-primary">Onayla</a>
+                                    <a href="/admin-delete-activity/<?php echo $id; ?>" class="btn btn-danger">Sil</a>
+                                </div>
+                                <?php endforeach; ?>
+                            </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td>0002</td>
-                    <td>Jane Smith</td>
-                    <td>2023-04-13</td>
-                    <td>$200</td>
-                    <td><span class="status shipped">Shipped</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td>0003</td>
-                    <td>Bob Johnson</td>
-                    <td>2023-04-12</td>
-                    <td>$50</td>
-                    <td><span class="status delivered">Delivered</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td>0004</td>
-                    <td>Sara Lee</td>
-                    <td>2023-04-11</td>
-                    <td>$75</td>
-                    <td><span class="status pending">Pending</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td>0005</td>
-                    <td>Tom Smith</td>
-                    <td>2023-04-10</td>
-                    <td>$150</td>
-                    <td><span class="status shipped">Shipped</span></td
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 </tbody>
             </table>
