@@ -87,7 +87,7 @@
         <h1>
             <?php echo $id; ?>
         </h1>
-        <div class="card-image" style="background-image: url(<?php echo $imgae_url; ?>)"></div>
+        <img class="card-image" src="<?php echo $imgae_url; ?>"></img>
         <div class="card-content">
             <ul>
                 <li>
