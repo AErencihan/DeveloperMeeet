@@ -4,12 +4,15 @@ namespace App\Http\Controllers\activity;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\SessionUtil;
-use App\Http\Controllers\User;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Routing\Redirector;
 
 class ProfileService extends Controller
 {
-    public function viewProfile()
+    public function viewProfile(): View|Factory|Redirector|RedirectResponse|Application
     {
         $user = SessionUtil::getUser();
         if ($user == null) {
@@ -18,26 +21,4 @@ class ProfileService extends Controller
         $activities = Activity::where('user_id', $user->id)->get();
         return view('auth.profile', compact('user', 'activities'));
     }
-
-    public function myProfile()
-    {
-        $user = SessionUtil::getUser();
-        if ($user == null) {
-            return redirect('/login');
-        }
-        $activities = Activity::where('user_id', $user->id)->get();
-        return view('auth.myProfile', compact('user', 'activities'));
-    }
-
-    public function profil($id)
-    {
-        $activities = DB::table('activity')->where('user_id', $id)->get();
-        return view('profile', ['activity' => $activities]);
-    }
-
-
-    //
-    //        $activities =User::table('activity')->where('id', $id)->get();
-    //        return view('profile', ['activity' => $activities]);
-
 }
