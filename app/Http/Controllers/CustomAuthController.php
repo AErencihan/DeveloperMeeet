@@ -41,6 +41,7 @@ class CustomAuthController extends Controller
             Auth::loginUsingId($credentials['email']);
             session_start();
             $_SESSION['user'] = $this->getFirst($credentials['email']);
+            $_SESSION['user.email'] = $credentials['email'];
             return redirect()->intended('dashboard')
                 ->withSuccess('Signed in');
         }
