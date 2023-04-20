@@ -89,9 +89,12 @@
         </h1>
         <div class="card-image" style="background-image: url(<?php echo $imgae_url; ?>)"></div>
         <div class="card-content">
-
-            <p><?php echo $description; ?></p>
             <ul>
+                <li>
+                    <strong>Activity Description: </strong>
+                        <?php echo $description; ?>
+
+                </li>
                 <li><strong>Tarih:</strong>
                     <?php echo $date; ?>
                 </li>
@@ -127,9 +130,9 @@
 
     map.on('click', function (e) {
         var coordinates = e.lngLat;
-        var lng = coordinates.lng;
+        var lng = coordinates.lot;
         var lat = coordinates.lat;
-        console.log('Seçilen koordinatlar: ' + coordinates.lng + ', ' + coordinates.lat);
+        console.log('Seçilen koordinatlar: ' + coordinates.lot + ', ' + coordinates.lat);
         marker.setLngLat(coordinates);
 
         map.flyTo({

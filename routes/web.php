@@ -84,7 +84,6 @@ Route::get('hatalı-giriş', function () {
 
 Route::get('etkinlige-katıl/{id}', [ActivityJoinService::class, 'joinActivity'])->name('joinActivity');
 Route::get('profile', [ProfileService::class, 'viewProfile'])->name('profil');
-
 // FORUM
 //---------------------------
 Route::get('forum', function () {

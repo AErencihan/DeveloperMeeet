@@ -444,6 +444,7 @@
     </nav>
     <div class="log">
         <a href="/signout"><button>Çıkış Yap</button></a>
+        <a href="/profile"><button>Hesabım</button></a>
     </div>
 </header>
 <div class="menu2">
