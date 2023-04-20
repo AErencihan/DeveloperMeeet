@@ -132,16 +132,8 @@
             <img src="https://i.pravatar.cc/150?img=3" alt="Profil Fotoğrafı">
         </div>
         <div class="info">
-            <h1>Kullanıcı Adı: <?php $users = DB::table('users')->get();
-                foreach ($users as $user): ?>
-                <?php echo $user->first_name; ?> </h1>
-            <?php endforeach; ?>
-            <h4>Mail Adresi:
-                <?php $users = DB::table('users')->get();
-                foreach ($users as $user): ?>
-                <?php echo $user->email; ?> </h4>
-        <?php endforeach; ?>
-            </p>
+            <h1>Kullanıcı Adı: <?php echo $user->first_name; ?> </h1>
+            <h4>Mail Adresi:<?php echo $user->email; ?> </h4>
         </div>
         <div class="counts">
             <div class="count">

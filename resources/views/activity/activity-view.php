@@ -93,17 +93,14 @@
                 <li>
                     <strong>Activity Description: </strong>
                         <?php echo $description; ?>
-
                 </li>
                 <li><strong>Tarih:</strong>
                     <?php echo $date; ?>
                 </li>
-
                 <li><strong>Konumun haritada gösterimi</strong>
                     <div id="map" style="width: 100%; height: 300px;"></div>
                 </li>
             </ul>
-
             <a href="/etkinlige-katıl/<?php echo $primaryKey ?>" class="button">Etkinliğe Katıl</a>
         </div>
     </div>
