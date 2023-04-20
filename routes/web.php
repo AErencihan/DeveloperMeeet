@@ -41,7 +41,9 @@ Route::get('signin', [CustomAuthController::class, 'giris'])->name('giris');
 //eray oluşturdu
 Route::get('meets', [CustomAuthController::class, 'meets'])->name('meets');
 
-
+Route::get('/login', function () {
+    return view('auth.signIn');
+});
 Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
 Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
 Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom');
