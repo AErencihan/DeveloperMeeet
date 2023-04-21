@@ -441,6 +441,7 @@
             <li><a href="/konular">Forum</a></li>
             <li><a href="/etkinlikler">Meet</a></li>
             <li><a href="/contact">İletişim</a></li>
+            <li><a href="/etkinlikler">Etkinliker</a></li>
     </nav>
     <div class="log">
         <a href="/signout"><button>Çıkış Yap</button></a>
@@ -512,9 +513,9 @@
     <div class="inner-footer">
         <div class="inner-left-footer">
             <ul>
-                <li><a href="#">Anasayfa</a></li>
-                <li><a href="#">Forum</a></li>
-                <li><a href="#">Meet</a></li>
+                <li><a href="/">Anasayfa</a></li>
+                <li><a href="/forum">Forum</a></li>
+                <li><a href="/etkinlikler">Meet</a></li>
                 <li><a href="/contact">İletişim</a></li>
             </ul>
         </div>

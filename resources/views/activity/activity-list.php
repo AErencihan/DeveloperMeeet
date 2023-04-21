@@ -64,9 +64,72 @@
         .card-link:hover {
             text-decoration: underline;
         }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #0077be; /*Açık mavi ton*/
+            overflow: hidden;
+        }
+
+        nav a {
+            color: #fff; /*Beyaz*/
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 18px;
+            float: left;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #006aae; /*Daha koyu bir mavi ton*/
+        }
+
+        nav .logo {
+            float: left;
+            padding: 8px;
+            margin-left: 20px;
+            margin-right: 20px;
+            height: 50px;
+            width: 50px;
+            background-color: #fff; /*Beyaz*/
+            border-radius: 50%;
+        }
+
+        nav .menu {
+            float: right;
+        }
+
+        nav .menu a {
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            nav a, nav .menu {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            nav .logo {
+                margin-left: 0;
+            }
+        }
     </style>
 </head>
 <body>
+<nav>
+    <a href="/">Anasayfa</a>
+    <a href="/konular">konular</a>
+    <div class="menu">
+        <a href="/etkinlik-olustur">Etkinlik Oluştur</a>
+        <a href="/profile">Profil</a>
+        <a href="/signout">Çıkış</a>
+    </div>
+</nav>
 <h1 style="text-align:center;">ETKİNLİKLER LİSTESİ</h1>
 <div class="container">
 

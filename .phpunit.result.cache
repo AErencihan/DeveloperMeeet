@@ -1,1 +1,1 @@
-{"version":1,"defects":[],"times":{"Tests\\Unit\\ExampleTest::test_that_true_is_true":0.003000000000000000062450045135165055398829281330108642578125,"Tests\\Feature\\ExampleTest::test_the_application_returns_a_successful_response":0.1670000000000000095479180117763462476432323455810546875}}
+{"version":1,"defects":[],"times":{"Tests\\Unit\\ExampleTest::test_that_true_is_true":0.0040000000000000000832667268468867405317723751068115234375,"Tests\\Feature\\ExampleTest::test_the_application_returns_a_successful_response":0.2079999999999999904520819882236537523567676544189453125}}
