@@ -57,7 +57,7 @@
         }
 
         nav {
-            background-color: #0077be; /*Açık mavi ton*/
+            background-color: #0077be;
             overflow: hidden;
         }
 
@@ -71,7 +71,7 @@
         }
 
         nav a:hover {
-            background-color: #006aae; /*Daha koyu bir mavi ton*/
+            background-color: #006aae;
         }
 
         nav .logo {
@@ -81,7 +81,7 @@
             margin-right: 20px;
             height: 50px;
             width: 50px;
-            background-color: #fff; /*Beyaz*/
+            background-color: #fff;
             border-radius: 50%;
         }
 
@@ -119,7 +119,7 @@
 <body>
 <nav>
     <a href="#" class="logo"></a>
-    <a href="/">Anasayfa</a>
+    <a href="/">Developer Meet</a>
     <a href="/contact">İletişim</a>
     <a href="/etkinlik-olustur">Etkinlik Oluştur</a>
     <a href="/forum">Forum Oluştur</a>
