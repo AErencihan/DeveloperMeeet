@@ -57,7 +57,7 @@
         }
 
         nav {
-            background-color: #0077be;
+            background-color: #120a36;
             overflow: hidden;
         }
 

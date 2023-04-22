@@ -129,7 +129,7 @@
         }
 
         nav {
-            background-color: #0077be; /*Açık mavi ton*/
+            background-color: #120a36;
             overflow: hidden;
         }
 
@@ -183,7 +183,7 @@
         }
 
         nav {
-            background-color: #0077be; /*Açık mavi ton*/
+            background-color: #120a36;
             overflow: hidden;
         }
 
