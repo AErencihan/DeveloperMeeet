@@ -21,6 +21,7 @@ class VerifyCsrfToken extends Middleware
         'konu-olustur',
         'yorum-olustur/*',
         'resetPassword',
-        'updatePassword'
+        'updatePassword',
+        'view'
     ];
 }

@@ -55,7 +55,8 @@ Route::post('updatePassword', [CustomAuthController::class, 'updatePassword'])->
 
 // Path: app/Http/Controllers/activity/ActivityCreatorService.php
 Route::post('activity-create', [ActivityCreatorService::class, 'activityCreate'])->name('activityCreate');
-Route::get('etkinlik-olustur', [ActivityCreatorService::class, 'viewActivity'])->name('activityCreate');
+Route::get('etkinlik-olustur', [ActivityCreatorService::class, 'loadMap'])->name('activityCreate');
+Route::post('view', [ActivityCreatorService::class, 'viewActivity'])->name('viewActivity');
 
 
 Route::get('admin-page', [AdminDashboardService::class, 'viewAdminPage'])->name('adminPage');
@@ -71,7 +72,7 @@ Route::get('/şifre-unuttum', function () {
 });
 
 
-Route::post('/harita', function () {
+Route::get('/harita', function () {
     return view('harita');
 });
 

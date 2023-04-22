@@ -19,7 +19,7 @@
             margin: 0 auto;
             background-color: #fff;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         label {
@@ -54,6 +54,7 @@
         input[type="submit"]:hover {
             background-color: #3e8e41;
         }
+
         body {
             margin: 0;
             padding: 0;
@@ -118,18 +119,33 @@
     <a href="/forum">Forum Oluştur</a>
 </nav>
 <h1>Etkinlik Oluşturma Formu</h1>
-<form action="/harita" method="post">
+<form action="/activity-create" method="post" enctype="multipart/form-data">
     <label for="etkinlik-ad">Etkinlik Adı:</label>
-    <input type="text" id="etkinlik-ad" name="etkinlik-ad">
+    <input type="text" id="etkinlik-ad" name="title">
 
     <label for="tarih">Tarih:</label>
-    <input type="date" id="tarih" name="tarih">
+    <input type="date" id="tarih" name="date">
 
     <label for="saat">Saat:</label>
     <input type="time" id="saat" name="saat">
 
     <label for="aciklama">Açıklama:</label>
-    <textarea id="aciklama" name="aciklama" rows="4" cols="50"></textarea>
+    <textarea id="aciklama" name="description" rows="4" cols="50"></textarea>
+
+    <label for="resim">Resim:</label>
+    <input type="file" id="resim" name="resim">
+
+    <?php
+    $lat = $_POST['lat'];
+    $lot = $_POST['lot'];
+    ?>
+    <label hidden="hidden" for="lat">lat:</label>
+    <input type="text" id="lat" name="lat" value="<?php echo $lat?>">
+
+
+    <label hidden="hidden" for="lot">lat:</label>
+    <input type="text" id="lat" name="lot" value="<?php echo $lot?>">
+
 
     <input type="submit" value="Etkinlik Oluştur">
 </form>

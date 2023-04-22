@@ -57,12 +57,11 @@
 </head>
 <body>
 <div id="map-container">
-    <form action="/activity-create" method="post">
+    <form action="/view" method="post">
         <input type="text" name="lat" placeholder="lat">
-        <input type="text" name="lng" placeholder="lng">
+        <input type="text" name="lot" placeholder="lot">
         <button type="submit">OLUŞTUR</button>
     </form>
-
     <div id="map"></div>
 </div>
 
@@ -98,7 +97,7 @@
         });
 
         document.querySelector('input[name="lat"]').value = lat;
-        document.querySelector('input[name="lng"]').value = lng;
+        document.querySelector('input[name="lot"]').value = lng;
     });
 </script>
 

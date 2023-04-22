@@ -35,7 +35,7 @@ class Activity extends Model
         $activity->lot = $array['lot'];
         $activity->date = $array['date'];
         $activity->title = $array['title'];
-        $activity->image_url = $array['image_url'];
+        $activity->image_url = $array['image'];
         $activity->description = $array['description'];
         $activity->status = 'PENDING';
         $activity->created_at = Date('Y-m-d');
