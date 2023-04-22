@@ -13,7 +13,7 @@ class ActivityListService extends Controller
     {
         // get status APPROVED
         $activities = Activity::where('status', 'APPROVED')->get();
-        $factory = view('activity.activity-list', compact('activities'));
+        $factory = view('activity.list2', compact('activities'));
         return $factory;
     }
 

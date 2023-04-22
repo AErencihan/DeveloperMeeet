@@ -26,9 +26,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $user = SessionUtil::getUser();
     if ($user != null) {
-        return view('registered-dashboard');
+        return view('home.home-logged-in');
     } else {
-        return view('dashboard');
+        return view('home.home');
     }
 });
 //eray ekledi

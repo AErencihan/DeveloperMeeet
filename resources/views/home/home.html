@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Developer Meet</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #title {
+            color: #fff;
+            font-size: 72px;
+            opacity: 0;
+            transition: all 1s;
+        }
+
+        #button {
+            margin-top: 50px;
+            padding: 15px 30px;
+            font-size: 24px;
+            background-color: #fff;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #button2 {
+            margin-top: 50px;
+            padding: 15px 25px;
+            font-size: 24px;
+            background-color: #fff;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1 id="title">Developer Meet</h1>
+    <button href="/signup" id="button">Haydi Başlayalım - Kayıt Ol</button>
+    <button href="/signup" id="button2">Haydi Başlayalım - Giris Yap</button>
+</div>
+<script>
+    const title = document.getElementById("title");
+    const button = document.getElementById("button");
+    const button2 = document.getElementById("button2");
+
+    let opacity = 0;
+    let intervalID = setInterval(() => {
+        opacity += 0.05;
+        title.style.opacity = opacity;
+        title.style.transform = "translateX(-" + (1 - opacity) * 100 + "px)";
+        if (opacity >= 1) clearInterval(intervalID);
+    }, 50);
+
+    button2.addEventListener("click", () => {
+           window.location.href = "/login";
+    });
+
+    button.addEventListener("click", () => {
+           window.location.href = "/signup";
+    });
+</script>
+
+</body>
+</html>
