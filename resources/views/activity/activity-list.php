@@ -122,7 +122,7 @@
 </head>
 <body>
 <nav>
-    <a href="/">Anasayfa</a>
+    <a href="/">Developer Meet</a>
     <a href="/konular">konular</a>
     <div class="menu">
         <a href="/etkinlik-olustur">Etkinlik Oluştur</a>

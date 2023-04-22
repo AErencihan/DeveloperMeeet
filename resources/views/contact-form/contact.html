@@ -7,12 +7,14 @@
     <title>Document</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
-        body{
-            margin:0px;
-            padding:0px;
+
+        body {
+            margin: 0px;
+            padding: 0px;
             background-color: #dfe4ea;
             height: 100vh;
         }
+
         header {
             height: 10vh;
             width: 100%;
@@ -20,14 +22,16 @@
             justify-content: space-evenly;
             align-items: center;
         }
+
         header > .logo {
             font-size: 15px;
             font-family: "ASAP";
             font-weight: bold;
         }
+
         header > .logo > a {
             color: #4b4b4b;
-            text-decoration:none;
+            text-decoration: none;
         }
 
         header > nav.menu > ul {
@@ -42,8 +46,9 @@
             font-size: 12px;
             margin-right: 10px;
         }
-        header > nav.menu > ul > li > a{
-            text-decoration:none;
+
+        header > nav.menu > ul > li > a {
+            text-decoration: none;
             color: #4b4b4b;
         }
 
@@ -64,125 +69,183 @@
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
         }
 
-        header > div.log > a >  button:hover {
+        header > div.log > a > button:hover {
             opacity: .5;
             transition: .5s;
             cursor: pointer;
         }
-        .form-area-container{
+
+        .form-area-container {
             /* background-color: red; */
-            width:100%;
-            height: 90vh;   
-            display:flex;
+            width: 100%;
+            height: 90vh;
+            display: flex;
             justify-content: center;
             align-items: center;
         }
-        .form-area{
-            width:500px;
+
+        .form-area {
+            width: 500px;
             height: 70%;
             /* background-color: gray; */
         }
-        .form-area > h3{
+
+        .form-area > h3 {
             text-align: center;
             font-family: "ASAP";
             font-weight: bold;
             text-transform: uppercase;
 
         }
-        .form-element-container{
+
+        .form-element-container {
             /* background-color: blue; */
-            width:100%;
+            width: 100%;
             height: 10vh;
-            display:flex;
+            display: flex;
             flex-direction: column;
-            margin-bottom:10px;
+            margin-bottom: 10px;
         }
-        .textarea-container{
+
+        .textarea-container {
             height: 15vh;
         }
-        .form-element-container > label{
-            color:gray;
-            font-family:"ASAP";
+
+        .form-element-container > label {
+            color: gray;
+            font-family: "ASAP";
             font-weight: 400;
-            font-size:12px;
-            margin-bottom:10px;
-        }  
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
         .form-element-container > input[type="text"], textarea {
             outline: none;
-            padding:10px 15px;
-            box-shadow: 2px 2px 3px rgba(0,0,0,.2);
+            padding: 10px 15px;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, .2);
             background: none;
-            border:1px solid gray;
-        } 
-        
-        .form-element-container > input[type="submit"], input[type="reset"]{
-            padding:10px 15px;
-            border:none;
-            outline:none;
+            border: 1px solid gray;
+        }
+
+        .form-element-container > input[type="submit"], input[type="reset"] {
+            padding: 10px 15px;
+            border: none;
+            outline: none;
             cursor: pointer;
-            color:White;
-        } 
-        input[type="submit"]{
+            color: White;
+        }
+
+        input[type="submit"] {
             background-color: #32ff7e;
-            color:White;
-            box-shadow: 2px 0px 5px rgba(0,0,0,.2);
+            color: White;
+            box-shadow: 2px 0px 5px rgba(0, 0, 0, .2);
             font-family: "ASAP";
             font-weight: 500;
             letter-spacing: 1px;
         }
-        input[type="reset"]{
+
+        input[type="reset"] {
             background-color: #ff3838;
-            color:White;
-            box-shadow: 2px 0px 5px rgba(0,0,0,.2);
+            color: White;
+            box-shadow: 2px 0px 5px rgba(0, 0, 0, .2);
             font-family: "ASAP";
             font-weight: 500;
             letter-spacing: 1px;
         }
-        textarea{
+
+        textarea {
             height: 400px;
-        }  
-        input[type="submit"]{
-            margin:10px 0px;
+        }
+
+        input[type="submit"] {
+            margin: 10px 0px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #0077be; /*Açık mavi ton*/
+            overflow: hidden;
+        }
+
+        nav a {
+            color: #fff; /*Beyaz*/
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 18px;
+            float: left;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #006aae; /*Daha koyu bir mavi ton*/
+        }
+
+        nav .logo {
+            float: left;
+            padding: 8px;
+            margin-left: 20px;
+            margin-right: 20px;
+            height: 50px;
+            width: 50px;
+            background-color: #fff; /*Beyaz*/
+            border-radius: 50%;
+        }
+
+        nav .menu {
+            float: right;
+        }
+
+        nav .menu a {
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            nav a, nav .menu {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            nav .logo {
+                margin-left: 0;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="/dashboard"><span>Developer Meet</span></a>
-        </div>
-        <nav class="menu">
-            <ul>
-                <li>Forum</li>
-                <li>Meet</li>
-                <li>İletişim</li>
-        </nav>
-        <div class="log">
-            <a href="/signin"><button>Giriş Yap</button></a>
-        </div>
-    </header>
-    <div class="form-area-container">
-        <div class="form-area">
-            <h3>İletişime Geçin !</h3>
-            <form>
-                <div class="form-element-container">
-                    <label>Adınız Soyadınız</label>
-                    <input type="text" placeholder="Ad Soyad"/>
-                </div>
-                <div class="form-element-container">
-                    <label>Çalıştığınız Alan</label>
-                    <input type="text" placeholder="Çalıştığınız Alan"/>
-                </div>
-                <div class="form-element-container textarea-container">
-                    <label>Mesajınız</label>
-                    <textarea type="text" placeholder="Mesajınız"></textarea>
-                </div>
-                <div class="form-element-container">
-                    <input type="submit" />
-                    <input type="reset" />
-                </div>
-            </form>
-        </div>
+<nav>
+    <a href="#" class="logo"></a>
+    <a href="/">Developer Meet</a>
+    <a href="/etkinlik-olustur">Etkinlik Oluştur</a>
+    <a href="/forum">Forum Oluştur</a>
+</nav>
+<div class="form-area-container">
+    <div class="form-area">
+        <h3>İletişime Geçin !</h3>
+        <form>
+            <div class="form-element-container">
+                <label>Adınız Soyadınız</label>
+                <input type="text" placeholder="Ad Soyad"/>
+            </div>
+            <div class="form-element-container">
+                <label>Çalıştığınız Alan</label>
+                <input type="text" placeholder="Çalıştığınız Alan"/>
+            </div>
+            <div class="form-element-container textarea-container">
+                <label>Mesajınız</label>
+                <textarea type="text" placeholder="Mesajınız"></textarea>
+            </div>
+            <div class="form-element-container">
+                <input type="submit"/>
+                <input type="reset"/>
+            </div>
+        </form>
     </div>
+</div>
 </body>
 </html>
