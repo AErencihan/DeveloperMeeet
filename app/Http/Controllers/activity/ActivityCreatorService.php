@@ -11,9 +11,9 @@ class ActivityCreatorService extends Controller
      public function activityCreate(Request $request)
     {
         $all = $request->all();
-        $all['image'] = $request->file('resim')->store('images', 's3');
-        $fullImageUrl = Storage::disk('s3')->url($all['image']);
-        $all['image'] = $fullImageUrl;
+        $all['resim'] = $request->file('resim')->store('images', 's3');
+        $fullImageUrl = Storage::disk('s3')->url($all['resim']);
+        $all['resim'] = $fullImageUrl;
         Activity::create($all);
         return redirect("/dashboard")->withSuccess('You have signed-in');
     }

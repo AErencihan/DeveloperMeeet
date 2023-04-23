@@ -11,10 +11,11 @@
         }
 
         body {
-            background-color: #000;
+            background-color: #1f1f3b;
             display: flex;
             justify-content: center;
             align-items: center;
+            background-image: url("https://i.hizliresim.com/n7hj1cn.png");
         }
 
         #container {
@@ -25,9 +26,10 @@
 
         #title {
             color: #fff;
-            font-size: 72px;
+            font-size: 80px;
             opacity: 0;
             transition: all 1s;
+            text-shadow: 5px 5px 7px #000000;
         }
 
         #button {
@@ -77,6 +79,27 @@
 
     button.addEventListener("click", () => {
            window.location.href = "/signup";
+    });
+    button.addEventListener("mouseover", () => {
+        button.style.backgroundColor = "#0e1133";
+        button.style.color = "#fff";
+    });
+
+    // mouse butondan ayrıldığında butonun rengini değiştir
+    button.addEventListener("mouseout", () => {
+        button.style.backgroundColor = "#fff";
+        button.style.color = "#000";
+    });
+
+    button2.addEventListener("mouseover", () => {
+        button2.style.backgroundColor = "#0e1133";
+        button2.style.color = "#fff";
+    });
+
+    // mouse butondan ayrıldığında butonun rengini değiştir
+    button2.addEventListener("mouseout", () => {
+        button2.style.backgroundColor = "#fff";
+        button2.style.color = "#000";
     });
 </script>
 

@@ -11,7 +11,7 @@
         }
 
         body {
-            background-color: #000;
+            background-color: #1f1f3b;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -46,7 +46,7 @@
             justify-content: flex-end;
             width: auto;
             padding: 20px;
-            background-color: #1E1E1E;
+            background-color: #1f1f3b;
             position: fixed;
             top: 0;
             left: 0;
@@ -67,7 +67,6 @@
     </style>
 </head>
 <body>
-
 <nav>
     <a href="/konular">Forum</a>
     <a href="/contact">İletişim</a>
@@ -76,7 +75,7 @@
 
 <div id="container">
     <h1 id="title">Developer Meet</h1>
-    <button href="/etkinlikler" id="button">Haydi Başlayalım - Etinliklere Git</button>
+    <button href="/etkinlikler" id="button">Etinliklere Git</button>
 </div>
 <img src="https://i.hizliresim.com/17c1h8f.jpg" alt="Resim">
 <script>

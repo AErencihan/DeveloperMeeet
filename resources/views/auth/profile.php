@@ -238,6 +238,7 @@
     <a href="#" class="logo"></a>
     <a href="/">Anasayfa</a>
     <a href="/contact">İletişim</a>
+    <a href="/signout">Çıkış Yap</a>
 </nav>
 <div class="container">
     <div class="profile">
