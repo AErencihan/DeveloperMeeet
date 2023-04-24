@@ -18,8 +18,8 @@
         }
 
         #map {
-            width: 400px;
-            height: 300px;
+            width: 900px;
+            height: 400px;
             margin-bottom: 20px;
         }
 
@@ -42,11 +42,7 @@
         }
 
         form button {
-            padding: 10px;
-            border-radius: 5px;
-            border: none;
-            background-color: #0078ff;
-        color: #fff
+            display: none;
         }
         input, button {
             margin-top: 10px;
@@ -58,8 +54,10 @@
 <body>
 <div id="map-container">
     <form action="/view" method="post">
-        <input type="text" name="lat" placeholder="lat">
-        <input type="text" name="lot" placeholder="lot">
+        <h1>Harita</h1>
+        <input type="hidden" name="lat" placeholder="lat">
+        <input type="hidden" name="lot" placeholder="lot">
+        <h3>Haritaya tıklayarak koordinatları alabilirsiniz.</h3>
         <button type="submit">OLUŞTUR</button>
     </form>
     <div id="map"></div>
@@ -95,6 +93,10 @@
             curve: 1,
             animate: true
         });
+
+        // haritaya bir kez tıklandığında oluştur buttonu ortaya çıksın ve ona tıklandığında verileri gönder
+        document.querySelector('button').style.display = 'block';
+
 
         document.querySelector('input[name="lat"]').value = lat;
         document.querySelector('input[name="lot"]').value = lng;
