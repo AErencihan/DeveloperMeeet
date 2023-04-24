@@ -59,9 +59,44 @@
         input[type="submit"]:hover {
             background-color: #555;
         }
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            width: auto;
+            padding: 10px;
+            background-color: #1f1f3b;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: left;
+            margin-top: 30px;
+        }
     </style>
 </head>
 <body>
+<nav>
+    <a href="/konular">Forum</a>
+    <a href="/contact">İletişim</a>
+    <a href="/profile">Hesabım</a>
+</nav>
 <header>
     <h1><?= $post->title ?></h1>
 </header>

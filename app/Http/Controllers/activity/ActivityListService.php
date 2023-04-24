@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\activity;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -11,8 +12,15 @@ class ActivityListService extends Controller
 {
     public function viewAllActivities(): Factory|View|Application
     {
-        $activities = Activity::where('status', 'APPROVED')->get();
-        $factory = view('activity.activity-list', compact('activities'));
+        $toDto = Activity::where('status', 'APPROVED')->get();
+        $activitiesArray = [];
+        for ($i = 0; $i < count($toDto); $i++) {
+            $user = User::find($toDto[$i]->user_id);
+            $toDto[$i]->first_name = $user->first_name;
+            $activities = Activity::toDto($toDto[$i]);
+            $activitiesArray[] = $activities;
+        }
+        $factory = view('activity.activity-list', compact('activitiesArray'));
         return $factory;
     }
 
@@ -22,7 +30,6 @@ class ActivityListService extends Controller
         $factory = view('activity.activity-view', compact('activity'));
         return $factory;
     }
-
 
 
 }

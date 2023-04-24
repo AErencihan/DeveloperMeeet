@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\WelcomeEmail;
 use App\Listeners\SendWelcomeEmail;
 use Illuminate\Http\Request;
-use Hash;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 
@@ -38,8 +38,15 @@ class CustomAuthController extends Controller
     {
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            Auth::loginUsingId($credentials['email']);
+            $remember = $request->has('rememberMe');
             session_start();
+
+            if ($remember) {
+                $_SESSION['user.email.remember'] = $credentials['email'];
+                $_SESSION['user.password'] = $credentials['password'];
+            }
+
+            Auth::loginUsingId($credentials['email']);
             $_SESSION['user'] = $this->getFirst($credentials['email']);
             $_SESSION['user.email'] = $credentials['email'];
             return redirect()->intended('dashboard')

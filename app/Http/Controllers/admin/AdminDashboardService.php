@@ -20,7 +20,7 @@ class AdminDashboardService extends Controller
             $activities = $this->getPendingMeetRequests();
             return view('admin-page', compact('activities'));
         } else {
-            return view('dashboard');
+            return view('home.home');
         }
     }
 

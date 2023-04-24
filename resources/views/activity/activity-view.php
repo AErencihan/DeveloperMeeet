@@ -71,9 +71,45 @@
             background-color: #3e8e41;
         }
 
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            width: auto;
+            padding: 10px;
+            background-color: #1f1f3b;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 50px;
+        }
     </style>
 </head>
 <body>
+<nav>
+    <a href="/konular">Forum</a>
+    <a href="/contact">İletişim</a>
+    <a href="/profile">Hesabım</a>
+</nav>
+
 <div class="container">
     <div class="card">
         <?php $id = $activity->title; ?>

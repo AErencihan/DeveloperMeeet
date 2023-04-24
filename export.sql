@@ -52,7 +52,7 @@ CREATE TABLE comments
 
 CREATE TABLE `activity`
 (
-    `id`          bigint(20) UNSIGNED                     NOT NULL,
+    `id`          bigint(20) UNSIGNED   AUTO_INCREMENT primary key   NOT NULL,
     `user_id`     bigint(20)                              NOT NULL,
     `lat`         varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
     `lot`         varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -178,3 +178,6 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT = @OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS = @OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION = @OLD_COLLATION_CONNECTION */;
+
+/* activity column description  lenght change*/
+ALTER TABLE activity MODIFY COLUMN description VARCHAR(9999) NOT NULL;

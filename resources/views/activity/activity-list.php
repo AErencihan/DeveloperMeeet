@@ -213,7 +213,8 @@
 </nav>
 <h1>Mevcut Etkinlikler</h1>
 <ul>
-    <?php foreach ($activities as $activity): ?>
+    <?php foreach ($activitiesArray as $activity): ?>
+
     <li id="<?php echo $activity->id ?>" class="booking-card" style="background-image: url(<?php echo $activity->image_url ?>)">
         <div class="book-container">
             <div class="content">
@@ -222,7 +223,7 @@
         </div>
         <div class="informations-container">
             <h2 class="title"><?php echo $activity->title ?></h2>
-            <p class="sub-title"><?php echo $activity->description ?></p>
+            <p class="sub-title"><?php echo $activity->first_name?></p>
             </svg> <?php echo $activity->date ?></p>
             <div class="more-information">
                 <div class="info-and-date-container">

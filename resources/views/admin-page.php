@@ -174,10 +174,10 @@
         <h1>Admin Panel</h1>
         <nav>
             <ul>
-                <li><a href="#">Dashboard</a></li>
+                <li><a href="/">Dashboard</a></li>
                 <li><a href="#">Users</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><a href="/profile">Settings</a></li>
+                <li><a href="/signout">Logout</a></li>
             </ul>
         </nav>
     </header>
