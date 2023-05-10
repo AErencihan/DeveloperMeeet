@@ -33,6 +33,8 @@ Route::get('/', function () {
 });
 //eray ekledi
 
+//home2
+Route::get('home2', [CustomAuthController::class, 'home2'])->name('home2');
 
 //eray dashboard'ı views içerisindeki dashboard uyguladı.
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']);

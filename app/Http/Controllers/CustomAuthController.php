@@ -11,7 +11,11 @@ use Illuminate\Support\Facades\Auth;
 
 class CustomAuthController extends Controller
 {
-
+    //home2
+    public function home2()
+    {
+        return view('home.home2');
+    }
     public function signUp()
     {
         return view('auth.signup');
