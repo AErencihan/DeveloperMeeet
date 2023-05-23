@@ -7,6 +7,7 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
 
     <style>
+         @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
         body {
             margin: 0;
             padding: 0;
@@ -15,6 +16,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            font-family:"ASAP";
         }
 
         #map {
@@ -42,24 +44,73 @@
         }
 
         form button {
-            display: none;
+            visibility: hidden;
+            margin-top:20px;
+            border:none;
+            outline:none;
+            background:black;
+            color:white;
+            font-family:"ASAP";
+            font-size:13px;
+            border-radius:20px;
+            box-shadow: 2px 2px 6px rgba(0,0,0,.4);
+            cursor:pointer;
         }
         input, button {
             margin-top: 10px;
             height: 30px;
             width: 200px;
         }
+
+        .map-container{
+            width:100%;
+            height:100vh;
+            display:flex;
+            flex-direction:row;
+            background-color:#dfe4ea;
+        }
+        .map-details{
+            width:30%;
+            height:100%;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            margin-top:-150px;
+        }
+        #map{
+            width:70%;
+            height:100%;
+            box-shadow:-2px 0px 12px rgba(0,0,0,.2);
+        }
+        @media (max-width:800px){
+            .map-container{
+                flex-direction:column;
+            }
+            .map-details{
+                margin-top:0px;
+                width:100%;
+                height:40%;
+            }
+            #map{
+                width:100%;
+                height:60%;
+                margin:0px;
+                padding: 0px;
+            }
+        }
     </style>
 </head>
 <body>
-<div id="map-container">
-    <form action="/view" method="post">
-        <h1>Harita</h1>
-        <input type="hidden" name="lat" placeholder="lat">
-        <input type="hidden" name="lot" placeholder="lot">
-        <h3>Haritaya tıklayarak koordinatları alabilirsiniz.</h3>
-        <button type="submit">OLUŞTUR</button>
-    </form>
+<div id="map-container" class="map-container">
+    <div class="map-details">
+        <form action="/view" method="post">
+            <h1>Harita</h1>
+            <input type="hidden" name="lat" placeholder="lat">
+            <input type="hidden" name="lot" placeholder="lot">
+            <div>Haritaya tıklayarak koordinatları alabilirsiniz.</div>
+            <button type="submit">OLUŞTUR</button>
+        </form>
+    </div>
     <div id="map"></div>
 </div>
 
@@ -95,7 +146,7 @@
         });
 
         // haritaya bir kez tıklandığında oluştur buttonu ortaya çıksın ve ona tıklandığında verileri gönder
-        document.querySelector('button').style.display = 'block';
+        document.querySelector('button').style.visibility = 'visible';
 
 
         document.querySelector('input[name="lat"]').value = lat;

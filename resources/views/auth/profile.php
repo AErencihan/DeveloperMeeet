@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Kullanıcı Profili</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
         body {
             margin: 0;
             padding: 0;
             font-family: sans-serif;
+            background: #dfe4ea;
         }
 
         .container {
@@ -122,124 +126,133 @@
             border: none;
             cursor: pointer;
         }
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
 
-        nav {
-            background-color: #120a36;
-            overflow: hidden;
-        }
 
-        nav a {
-            color: #fff; /*Beyaz*/
-            padding: 14px 16px;
+        
+
+        /* erayın eklediği header kodları */
+
+        /*  buraya el ile yazdığım resp navbar ekleniyor */
+       header{
+            width:100%;
+            height: 70px;
+            /* box-shadow: 3px 3px 40px rgba(0,0,0,.2); */
+            display:flex;
+            justify-content: space-around;
+            align-items: center;
+            list-style-type: none;
+            position: relative;
+        }
+        header > span{
+            font-family: 16px;
+            font-family: "ASAP";
+        }
+        header > nav > ul > li{
+            display: inline-block;
+            margin-right:5px;
+        }
+        header > nav > ul > li > a{
             text-decoration: none;
-            font-size: 18px;
-            float: left;
-            transition: background-color 0.3s ease;
+            font-size:13px;
+            color: #4b4b4b;
+            font-family: "ASAP";
+        }
+        header > nav > ul > li:last-child{
+            background-color: #ff3838;
+            padding:6px 13px;
+            border-radius: 150px;
+            box-shadow: 1px 2px 7px rgba(0,0,0,0.3);
+            cursor:pointer;
+        }
+        header > nav > ul > li:last-child > a{
+            font-size:13px;
+            color:white;
         }
 
-        nav a:hover {
-            background-color: #006aae; /*Daha koyu bir mavi ton*/
+        /*Hamburger Menu*/
+        .hamburger-menu{
+            display:none;
+            border: none;
+            outline: none;
+            background:none;
+            cursor: pointer;
+            font-size:22px;
         }
-
-        nav .logo {
-            float: left;
-            padding: 8px;
-            margin-left: 20px;
-            margin-right: 20px;
-            height: 50px;
-            width: 50px;
-            background-color: #fff; /*Beyaz*/
-            border-radius: 50%;
+        /*nav2*/
+        .nav2{
+            display: none;
+            width:100%;
+            height: 300px;
+            background-color: #dfe4ea;
+            box-shadow: 5px 5px 5px rgba(0,0,0,.3);
+            position: absolute;
+            top:70px;
         }
-
-        nav .menu {
-            float: right;
+        .nav2 > ul > li{
+            display: block;
+            text-align: center;
+            margin-bottom:25px;
         }
-
-        nav .menu a {
-            margin-right: 10px;
-        }
-
-        @media (max-width: 768px) {
-            nav a, nav .menu {
-                float: none;
-                display: block;
-                text-align: left;
-            }
-
-            nav .logo {
-                margin-left: 0;
-            }
-        }
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        nav {
-            background-color: #120a36;
-            overflow: hidden;
-        }
-
-        nav a {
-            color: #fff; /*Beyaz*/
-            padding: 14px 16px;
+        .nav2 > ul > li > a{
             text-decoration: none;
-            font-size: 18px;
-            float: left;
-            transition: background-color 0.3s ease;
+            font-size:13px;
+            color: #4b4b4b;
+            font-family: "ASAP";
         }
 
-        nav a:hover {
-            background-color: #006aae; /*Daha koyu bir mavi ton*/
+        .nav2 > ul > li:last-child{
+            background-color: #ff3838;
+            padding:6px 13px;
+            border-radius: 150px;
+            box-shadow: 1px 2px 7px rgba(0,0,0,0.3);
+            cursor:pointer;
+        }
+        .nav2 > ul > li:last-child > a{
+            font-size:13px;
+            color:white;
         }
 
-        nav .logo {
-            float: left;
-            padding: 8px;
-            margin-left: 20px;
-            margin-right: 20px;
-            height: 50px;
-            width: 50px;
-            background-color: #fff; /*Beyaz*/
-            border-radius: 50%;
-        }
-
-        nav .menu {
-            float: right;
-        }
-
-        nav .menu a {
-            margin-right: 10px;
-        }
-
-        @media (max-width: 768px) {
-            nav a, nav .menu {
-                float: none;
+         /* Responsive */
+         @media (max-width:800px){
+            nav{
+                display: none;
+            }
+            .hamburger-menu{
                 display: block;
-                text-align: left;
+            }
+            .nav2{
+                display: none;
             }
 
-            nav .logo {
-                margin-left: 0;
+        }
+        @media (min-width:800px) {
+            .nav2{
+                display: none !important;
             }
         }
-
     </style>
 </head>
 <body>
-<nav>
-    <a href="#" class="logo"></a>
-    <a href="/">Anasayfa</a>
-    <a href="/contact">İletişim</a>
-    <a href="/signout">Çıkış Yap</a>
-</nav>
+<!--Header-->
+<header>
+    <span>Developer <b>Meet</b></span>
+    <nav>
+        <ul>
+            <li><a href="/">Anasayfa</a></li>
+            <li><a href="/contact">İletişim</a></li>
+            <li><a href="/signout">Çıkış Yap</a></li>
+        </ul>
+    </nav>
+    <button class="hamburger-menu" id="hamb-menu"><i class="fa-solid fa-bars"></i></button>
+    <div class="nav2" id="navMenu2">
+        <ul>
+            <li><a href="/">Anasayfa</a></li>
+            <li><a href="/contact">İletişim</a></li>
+            <li><a href="/signout">Çıkış Yap</a></li>
+        </ul>
+    </div>
+</header>
+<!--Container-->
 <div class="container">
     <div class="profile">
         <div class="avatar">
@@ -281,5 +294,22 @@
         </div>
     </div>
 </div>
+
+
+
+<script type="text/javascript">
+    const hamburgerButton = document.getElementById("hamb-menu");
+
+    hamburgerButton.addEventListener("click", () => {
+           let navMenu = document.getElementById("navMenu2");
+           if(navMenu.style.display == "block"){
+            navMenu.style.display = "none";
+           }
+           else{
+            navMenu.style.display = "block";
+           }
+    });
+</script>
+
 </body>
 </html>
