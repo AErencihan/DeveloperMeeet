@@ -9,10 +9,15 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: sans-serif;
+            font-family: "ASAP";
             background: #dfe4ea;
         }
-
+        h1,h4{
+            font-family:"ASAP"
+        }
+        .katildigi-etkinlikler{
+            text-align:center;
+        }
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -89,8 +94,8 @@
 
         .photos {
             display: flex;
-            flex-wrap: wrap;        }
-
+            flex-wrap: wrap;        
+        }
         .photo {
             position: relative;
             width: calc(33.33% - 20px);
@@ -127,8 +132,12 @@
             cursor: pointer;
         }
 
-
-        
+        /* profil bilgileri responsive alanı */
+        @media (max-width:600px){
+            .profile{
+                flex-direction:column;
+            }
+        }
 
         /* erayın eklediği header kodları */
 
@@ -262,24 +271,10 @@
             <h1>Kullanıcı Adı: <?php echo $user->first_name; ?> </h1>
             <h4>Mail Adresi:<?php echo $user->email; ?> </h4>
         </div>
-        <div class="counts">
-            <div class="count">
-                <h2>12</h2>
-                <p>Katıldığı Etkinlikler</p>
-            </div>
-            <div class="count">
-                <h2>36</h2>
-                <p>Takipçiler</p>
-            </div>
-            <div class="count">
-                <h2>24</h2>
-                <p>Takip Edilenler</p>
-            </div>
-        </div>
     </div>
 
     <div class="gallery">
-        <h1>Katıldığı Etkinlikler</h1>
+        <h1 class="katildigi-etkinlikler">Katıldığı Etkinlikler</h1>
         <div class="photos">
             <?php foreach ($activities as $activity): ?>
                 <div class="photo">
